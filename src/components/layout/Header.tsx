@@ -150,7 +150,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle>{t("cart.title")}</SheetTitle>
+                <SheetTitle>{cartContent.title}</SheetTitle>
               </SheetHeader>
               
               {totalItems === 0 ? (
@@ -158,24 +158,21 @@ export function Header() {
                   <ShoppingCart className="h-12 w-12 mb-2 opacity-20" /><p>{cartContent.empty}</p>
                 </div>
               ) : (
-                <div className="flex flex-col gap-4 mt-4">
+                <div className="flex flex-col gap-4 mt-4 h-[70vh]">
                     <div className="flex-1">
                       {cart.map((item, index) => (
                         <div key={index} className="flex items-center gap-4 border-b py-2">
-                          <img
-                            src={item.image}
-                            alt="Product"
-                            className="w-16 h-16 object-cover rounded-md"
-                          />
+                          <img src={item.image} alt="Product" className="w-16 h-16 object-cover rounded-md"/>
                           <div className="flex-1">
                             <h4 className="font-medium">{item.name}</h4>
-                            <p className="text-sm text-muted-foreground">
-                              {item.quantity} x {item.price}
-                            </p>
+                            <p className="text-sm text-muted-foreground">{item.quantity} x {item.price}</p>
+                          </div>
+                        </div>
+                        ))}
                       </div>
-                    </div>
-                  </div>
-                  
+
+
+
                   <div className="mt-auto">
                     <div className="flex justify-between py-4">
                       <span className="font-medium">Total</span>
@@ -186,7 +183,7 @@ export function Header() {
                     </Button>
                   </div>
                 </div>
-              )}
+               )}
             </SheetContent>
           </Sheet>
         </div>
