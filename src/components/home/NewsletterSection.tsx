@@ -58,8 +58,4 @@ export function NewsletterSection() {
         </section>
     );
 }
-        </div>
-      </div>
-    </section>
-  );
-}
+
