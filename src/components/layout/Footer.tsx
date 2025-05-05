@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { useTheme } from "@/context/ThemeContext";
-import { Github, Twitter, Instagram, Globe, Music } from "lucide-react";
+import { Github, Twitter, Instagram, Globe, Spotify } from "lucide-react";
 
 export function Footer() {
   const { t } = useTheme();
@@ -104,7 +104,7 @@ export function Footer() {
         
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {year} Akemi Cat Cafe. {t("footer.rights")}
+            &copy; {year} Lisa's Cat Cafe. {t("footer.rights")}
           </p>
           
           <div className="flex gap-6">
