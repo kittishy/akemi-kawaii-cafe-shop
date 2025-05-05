@@ -1,7 +1,7 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme, ThemeContextType } from "@/context/ThemeContext";
 import { useCart } from "@/context/CartContext";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { SwitchLocale } from "@/components/ui/switch-locale";
@@ -16,16 +16,53 @@ import {
 } from "@/components/ui/sheet";
 
 export function Header() {
-  const { t } = useTheme();
+  const { language, setLanguage } = useTheme() as ThemeContextType;
   const { totalItems } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [navLinks, setNavLinks] = useState<{ title: string; href: string }[]>([]);
+  const [cartContent, setCartContent] = useState<{ title: string; empty: string; checkout: string }>({
+    title: "",
+    empty: "",
+    checkout: "",
+  });
 
-  const navLinks = [
-    { title: t("nav.home"), href: "/" },
-    { title: t("nav.shop"), href: "/shop" },
-    { title: t("nav.about"), href: "/about" },
-    { title: t("nav.blog"), href: "/blog" },
-    { title: t("nav.contact"), href: "/contact" },
+  useEffect(() => {
+    if (language === "pt-BR") {
+      setNavLinks([
+        { title: "Início", href: "/" },
+        { title: "Loja", href: "/shop" },
+        { title: "Sobre", href: "/about" },
+        { title: "Blog", href: "/blog" },
+        { title: "Contato", href: "/contact" },
+      ]);
+      setCartContent({
+        title: "Carrinho",
+        empty: "Seu carrinho está vazio",
+        checkout: "Finalizar Compra",
+      });
+    } else if (language === "en-US") {
+      setNavLinks([
+        { title: "Home", href: "/" },
+        { title: "Shop", href: "/shop" },
+        { title: "About", href: "/about" },
+        { title: "Blog", href: "/blog" },
+        { title: "Contact", href: "/contact" },
+      ]);
+      setCartContent({
+        title: "Cart",
+        empty: "Your cart is empty",
+        checkout: "Checkout",
+      });
+    }
+  }, [language]);
+
+  const cart = [
+    {
+      image: "/placeholder.svg",
+      name: language === "pt-BR" ? "Café Mocha Lisa" : "Lisa Mocha Coffee",
+      quantity: 1,
+      price: language === "pt-BR" ? "R$20,00" : "US$20.00",
+    },
   ];
 
   return (
@@ -102,13 +139,13 @@ export function Header() {
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="relative">
-                <ShoppingCart className="h-5 w-5" />
+                <ShoppingCart className="h-5 w-5" /><span className="sr-only">Shopping cart</span>
                 {totalItems > 0 && (
                   <span className="absolute -top-1 -right-1 bg-accent text-accent-foreground text-xs rounded-full w-5 h-5 flex items-center justify-center">
                     {totalItems}
                   </span>
                 )}
-                <span className="sr-only">Shopping cart</span>
+                
               </Button>
             </SheetTrigger>
             <SheetContent>
@@ -118,23 +155,23 @@ export function Header() {
               
               {totalItems === 0 ? (
                 <div className="flex flex-col items-center justify-center h-[70vh] text-muted-foreground">
-                  <ShoppingCart className="h-12 w-12 mb-2 opacity-20" />
-                  <p>{t("cart.empty")}</p>
+                  <ShoppingCart className="h-12 w-12 mb-2 opacity-20" /><p>{cartContent.empty}</p>
                 </div>
               ) : (
                 <div className="flex flex-col gap-4 mt-4">
-                  {/* Cart items would go here */}
-                  <div className="flex-1">
-                    {/* Example cart item */}
-                    <div className="flex items-center gap-4 border-b py-2">
-                      <img 
-                        src="/placeholder.svg"
-                        alt="Product" 
-                        className="w-16 h-16 object-cover rounded-md"
-                      />
-                      <div className="flex-1">
-                        <h4 className="font-medium">Café Mocha Lisa</h4>
-                        <p className="text-sm text-muted-foreground">1 x R$20,00</p>
+                    <div className="flex-1">
+                      {cart.map((item, index) => (
+                        <div key={index} className="flex items-center gap-4 border-b py-2">
+                          <img
+                            src={item.image}
+                            alt="Product"
+                            className="w-16 h-16 object-cover rounded-md"
+                          />
+                          <div className="flex-1">
+                            <h4 className="font-medium">{item.name}</h4>
+                            <p className="text-sm text-muted-foreground">
+                              {item.quantity} x {item.price}
+                            </p>
                       </div>
                     </div>
                   </div>
@@ -145,7 +182,7 @@ export function Header() {
                       <span className="font-bold">R$20,00</span>
                     </div>
                     <Button className="w-full">
-                      {t("cart.checkout")}
+                      {cartContent.checkout}
                     </Button>
                   </div>
                 </div>

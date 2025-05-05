@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function SwitchLocale() {
-  const { language, setLanguage } = useTheme();
+  const { language, setLanguage } = useTheme()
   
   return (
     <DropdownMenu>
@@ -21,15 +21,15 @@ export function SwitchLocale() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem 
-          className={language === "pt-BR" ? "bg-muted" : ""} 
+        <DropdownMenuItem
+          className={language === "pt-BR" ? "bg-muted" : ""}
           onClick={() => setLanguage("pt-BR")}
         >
           🇧🇷 Português
         </DropdownMenuItem>
-        <DropdownMenuItem 
-          className={language === "en-US" ? "bg-muted" : ""} 
-          onClick={() => setLanguage("en-US")}
+        <DropdownMenuItem
+          className={language === "en-US" ? "bg-muted" : ""}
+          onClick={() => setLanguage("en-US")}        
         >
           🇺🇸 English
         </DropdownMenuItem>
