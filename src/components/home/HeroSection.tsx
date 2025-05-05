@@ -18,7 +18,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <span className="inline-block px-3 py-1 rounded-full bg-lisa-lavender dark:bg-lisa-dark-lavender/40 text-sm font-medium">
-              ✨ Café Temático de Gatinhos Kawaii
+              ✨ Café Temático de Gatinhos
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
               {t("hero.title")}
