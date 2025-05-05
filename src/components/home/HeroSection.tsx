@@ -22,7 +22,7 @@ export function HeroSection() {
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
               {t("hero.title")}
-              <span className="text-primary block mt-1">Lisa</span>
+              <span className="text-primary block mt-1"></span>
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl max-w-md">
               {t("hero.subtitle")}
