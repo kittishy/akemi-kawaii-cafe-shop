@@ -50,7 +50,7 @@ export function ProductCard({ product, likedProducts, onToggleLike }: ProductCar
         <img 
           src={product.image}
           alt={product.title}
-          className={`w-full h-full object-cover transition-transform group-hover:scale-105 ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`}
+          className={`w-full h-full object-cover transition-all duration-300 group-hover:scale-110 ${!imageLoaded ? 'opacity-0' : 'opacity-100'}`}
           onLoad={handleImageLoad}
         />
       </div>

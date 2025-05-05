@@ -14,12 +14,12 @@ export function Footer() {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
               <img 
-                src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
-                alt="Akemi Cat Cafe" 
-                className="h-10 w-10 object-contain rounded-full" 
+                src="/lovable-uploads/lisas-cafe-logo.png" 
+                alt="Lisa's Cafe" 
+                className="h-10 w-auto object-contain" 
               />
               <span className="font-display font-bold text-lg text-primary">
-                Akemi<span className="text-accent">Cat</span>Cafe
+                Lisa's<span className="text-accent">Cafe</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
@@ -98,13 +98,13 @@ export function Footer() {
                 <Music className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
               </a>
             </div>
-            <p className="text-xs text-muted-foreground mt-4">Discord: gxth_akemi</p>
+            <p className="text-xs text-muted-foreground mt-4">Discord: lisas_cafe</p>
           </div>
         </div>
         
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {year} Akemi Cat Cafe. {t("footer.rights")}
+            &copy; {year} Lisa's Cafe. {t("footer.rights")}
           </p>
           
           <div className="flex gap-6">

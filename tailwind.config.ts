@@ -67,7 +67,18 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))'
         },
-        // Tema Akemi Cat Cafe - Paleta Pastel
+        // Tema Lisa's Cafe - Paleta Pastel
+        lisa: {
+          'baby-blue': '#BAD7F2',
+          'lavender': '#E2D1F9',
+          'soft-gray': '#F0F0F0',
+          'cream': '#FFF6E9',
+          'peach': '#FFE5D9',
+          'dark-blue': '#6B9AC4',
+          'dark-lavender': '#A388B8',
+          'dark-gray': '#525252',
+        },
+        // Mantendo compatibilidade com código existente
         akemi: {
           'baby-blue': '#BAD7F2',
           'lavender': '#E2D1F9',

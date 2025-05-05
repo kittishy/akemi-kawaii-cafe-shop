@@ -90,11 +90,11 @@
 
 @layer utilities {
   .cat-card {
-    @apply rounded-3xl bg-white p-5 shadow-md dark:bg-gray-800 transition-all hover:shadow-lg border border-akemi-baby-blue/30 dark:border-akemi-dark-blue/30;
+    @apply rounded-3xl bg-white p-5 shadow-md dark:bg-gray-800 transition-all hover:shadow-lg border border-lisa-baby-blue/30 dark:border-lisa-dark-blue/30;
   }
   
   .cat-button {
-    @apply px-5 py-2 rounded-full bg-akemi-baby-blue text-white font-medium shadow-md hover:bg-akemi-dark-blue transition-all dark:bg-akemi-dark-blue dark:hover:bg-akemi-baby-blue;
+    @apply px-5 py-2 rounded-full bg-lisa-baby-blue text-white font-medium shadow-md hover:bg-lisa-dark-blue transition-all dark:bg-lisa-dark-blue dark:hover:bg-lisa-baby-blue;
   }
   
   .paw-print {

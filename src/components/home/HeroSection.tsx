@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden">
       {/* Background with wave effect */}
-      <div className="absolute inset-0 bg-akemi-cream dark:bg-akemi-dark-blue/20 -z-10">
+      <div className="absolute inset-0 bg-lisa-cream dark:bg-lisa-dark-blue/20 -z-10">
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-background" 
              style={{ clipPath: "ellipse(70% 100% at 50% 100%)" }}></div>
       </div>
@@ -17,12 +17,12 @@ export function HeroSection() {
       <div className="container pt-10 lg:pt-16 pb-24 lg:pb-32">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
-            <span className="inline-block px-3 py-1 rounded-full bg-akemi-lavender dark:bg-akemi-dark-lavender/40 text-sm font-medium">
+            <span className="inline-block px-3 py-1 rounded-full bg-lisa-lavender dark:bg-lisa-dark-lavender/40 text-sm font-medium">
               ✨ Café Temático de Gatinhos Kawaii
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
               {t("hero.title")}
-              <span className="text-primary block mt-1">Akemi</span>
+              <span className="text-primary block mt-1">Lisa</span>
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl max-w-md">
               {t("hero.subtitle")}
@@ -33,19 +33,19 @@ export function HeroSection() {
                 <Link to="/shop">{t("hero.cta")}</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full px-8">
-                <Link to="/about">Conheça a Akemi</Link>
+                <Link to="/about">Conheça a Lisa</Link>
               </Button>
             </div>
             
             <div className="flex items-center gap-4 pt-4">
               <div className="flex -space-x-3">
-                <div className="w-8 h-8 rounded-full bg-akemi-lavender flex items-center justify-center text-xs">
+                <div className="w-8 h-8 rounded-full bg-lisa-lavender flex items-center justify-center text-xs">
                   😺
                 </div>
-                <div className="w-8 h-8 rounded-full bg-akemi-baby-blue flex items-center justify-center text-xs">
+                <div className="w-8 h-8 rounded-full bg-lisa-baby-blue flex items-center justify-center text-xs">
                   🐱
                 </div>
-                <div className="w-8 h-8 rounded-full bg-akemi-peach flex items-center justify-center text-xs">
+                <div className="w-8 h-8 rounded-full bg-lisa-peach flex items-center justify-center text-xs">
                   😸
                 </div>
               </div>
@@ -61,8 +61,8 @@ export function HeroSection() {
             
             <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-xl animate-float">
               <img 
-                src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
-                alt="Akemi Mascote" 
+                src="/lovable-uploads/lisas-cafe-mascot.png" 
+                alt="Lisa Mascote" 
                 className="w-full h-auto rounded-2xl"
               />
               

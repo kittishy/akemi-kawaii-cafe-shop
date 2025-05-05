@@ -46,9 +46,9 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img 
-              src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
+              src="/lovable-uploads/lisas-cafe-logo.png" 
               alt="Lisa's Cafe" 
-              className="h-10 w-10 object-contain rounded-full" 
+              className="h-12 w-auto object-contain" 
             />
             <span className="font-display font-bold text-lg md:text-xl text-primary">
               Lisa's<span className="text-accent">Cafe</span>
@@ -71,7 +71,7 @@ export function Header() {
 
         {/* Mobile Navigation */}
         <div className={`
-          md:hidden fixed inset-0 top-16 z-40 bg-background p-6 transition-all duration-300 ease-in-out transform
+          md:hidden fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-md p-6 transition-all duration-300 ease-in-out transform shadow-lg border-r border-border
           ${isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0 pointer-events-none'}
         `}>
           <nav className="flex flex-col gap-6">

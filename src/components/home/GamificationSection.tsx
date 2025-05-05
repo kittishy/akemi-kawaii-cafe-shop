@@ -44,7 +44,7 @@ export function GamificationSection() {
   const [showAll, setShowAll] = useState(false);
   
   return (
-    <section className="py-16 bg-akemi-cream dark:bg-gray-900">
+    <section className="py-16 bg-lisa-cream dark:bg-gray-900">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="font-display text-3xl font-bold">Seu Progresso Meow!</h2>
@@ -68,7 +68,7 @@ export function GamificationSection() {
                 <h4 className="font-medium mb-2">Próximos benefícios:</h4>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
-                    <span className="w-5 h-5 bg-akemi-baby-blue rounded-full flex items-center justify-center text-white text-xs">✓</span>
+                    <span className="w-5 h-5 bg-lisa-baby-blue rounded-full flex items-center justify-center text-white text-xs">✓</span>
                     <span>Frete grátis em compras acima de R$50</span>
                   </li>
                   <li className="flex items-center gap-2">
