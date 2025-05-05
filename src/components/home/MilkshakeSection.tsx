@@ -1,43 +1,22 @@
 
+import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Product } from "@/context/CartContext";
-
-// Mock data - In a real app, this would come from an API
-const milkshakes: Product[] = [
-  {
-    id: "4",
-    title: "Milkshake de Morango",
-    price: 22.90,
-    image: "/placeholder.svg",
-    description: "Delicioso milkshake de morango com chantilly e orelhas de gato",
-    category: "milkshake",
-    likes: 35
-  },
-  {
-    id: "5",
-    title: "Milkshake de Lavanda",
-    price: 23.90,
-    image: "/placeholder.svg",
-    description: "Milkshake com sabor suave de lavanda e cobertura especial",
-    category: "milkshake",
-    likes: 27
-  },
-  {
-    id: "6",
-    title: "Milkshake de Caramelo",
-    price: 21.90,
-    image: "/placeholder.svg",
-    description: "Milkshake com calda de caramelo caseiro e chantilly",
-    category: "milkshake",
-    likes: 22
-  }
-];
+import { milkshakes } from "@/data/products";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function MilkshakeSection() {
   const { addItem } = useCart();
+  const [loadingImages, setLoadingImages] = useState<Record<string, boolean>>({});
+  
+  const handleImageLoad = (productId: string) => {
+    setLoadingImages(prev => ({
+      ...prev,
+      [productId]: false
+    }));
+  };
   
   return (
     <section className="py-16 bg-akemi-soft-gray dark:bg-gray-900">
@@ -51,11 +30,15 @@ export function MilkshakeSection() {
           {milkshakes.map((shake) => (
             <Card key={shake.id} className="bg-white dark:bg-gray-800 overflow-hidden border-none shadow-md hover:shadow-xl transition-all">
               <div className="p-4">
-                <div className="aspect-square rounded-xl overflow-hidden mb-4">
+                <div className="aspect-square rounded-xl overflow-hidden mb-4 relative">
+                  {loadingImages[shake.id] !== false && (
+                    <Skeleton className="absolute inset-0 w-full h-full" />
+                  )}
                   <img 
                     src={shake.image}
                     alt={shake.title}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full object-cover transition-all group-hover:scale-105 ${loadingImages[shake.id] !== false ? 'opacity-0' : 'opacity-100'}`}
+                    onLoad={() => handleImageLoad(shake.id)}
                   />
                 </div>
                 <CardContent className="p-0 space-y-3">

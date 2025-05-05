@@ -47,11 +47,11 @@ export function Header() {
           <Link to="/" className="flex items-center gap-2">
             <img 
               src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
-              alt="Akemi Cat Cafe" 
+              alt="Lisa's Cafe" 
               className="h-10 w-10 object-contain rounded-full" 
             />
             <span className="font-display font-bold text-lg md:text-xl text-primary">
-              Akemi<span className="text-accent">Cat</span>Cafe
+              Lisa's<span className="text-accent">Cafe</span>
             </span>
           </Link>
         </div>
@@ -133,7 +133,7 @@ export function Header() {
                         className="w-16 h-16 object-cover rounded-md"
                       />
                       <div className="flex-1">
-                        <h4 className="font-medium">Café Meowcha</h4>
+                        <h4 className="font-medium">Café Mocha Lisa</h4>
                         <p className="text-sm text-muted-foreground">1 x R$20,00</p>
                       </div>
                     </div>

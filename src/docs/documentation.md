@@ -1,13 +1,13 @@
 
-# Documentação: Akemi Cat Cafe E-Commerce
+# Documentação: Lisa's Cafe E-Commerce
 
 ## Visão Geral do Projeto
 
-Este projeto é um e-commerce de café temático inspirado em gatos anime, tendo como mascote principal a personagem Akemi, uma gatinha kawaii. A interface do site foi projetada utilizando a estética "fofo e pastel" com uma paleta de cores predominantemente em tons de azul bebê, cinza suave, branco e lavanda.
+Este projeto é um e-commerce de café temático inspirado em gatos anime, tendo como mascote principal a personagem Lisa, uma gatinha kawaii. A interface do site foi projetada utilizando a estética "fofo e pastel" com uma paleta de cores predominantemente em tons de azul bebê, cinza suave, branco e lavanda.
 
 ### Tema e Identidade Visual
 
-- **Mascote**: Akemi, uma personagem gatinha anime que serve como identidade visual do site
+- **Mascote**: Lisa, uma personagem gatinha anime que serve como identidade visual do site
 - **Paleta de Cores**: 
   - Azul bebê (#BAD7F2)
   - Lavanda (#E2D1F9)
@@ -24,6 +24,7 @@ Este projeto é um e-commerce de café temático inspirado em gatos anime, tendo
 - shadcn/ui
 - React Router DOM
 - TanStack Query
+- Supabase
 
 ## Estrutura do Projeto
 
@@ -55,6 +56,13 @@ Este projeto é um e-commerce de café temático inspirado em gatos anime, tendo
    - Gerencia o estado do carrinho de compras
    - Adiciona, remove e atualiza itens
    - Calcula totais
+
+### Dados
+
+1. **Produtos**
+   - Armazenados de forma centralizada em `src/data/products.ts`
+   - Exporta arrays específicos para diferentes seções (featured, milkshakes, etc.)
+   - Cada produto inclui imagens, descrições, preços e metadados
 
 ## Funcionalidades Principais
 
@@ -102,6 +110,12 @@ O design foi implementado para funcionar perfeitamente em dispositivos desktop, 
 - Efeitos de hover sutis
 - Animações suaves (flutuação, fade-in/out)
 
+### Otimização de Imagens
+
+- Esqueleto de carregamento (loading skeletons)
+- Transições suaves ao carregar imagens
+- Efeitos de hover em imagens (scale)
+
 ### Classes Tailwind customizadas
 
 ```css
@@ -133,7 +147,9 @@ O design foi implementado para funcionar perfeitamente em dispositivos desktop, 
 ```
 ├── public/
 │   └── lovable-uploads/
-│       └── 7eda1067-8586-41ec-8b78-50ec5763e70a.png (mascote Akemi)
+│       └── 7eda1067-8586-41ec-8b78-50ec5763e70a.png (mascote Lisa)
+│       └── coffee-mocha-lisa.jpg (imagens de produtos)
+│       └── ...
 ├── src/
 │   ├── components/
 │   │   ├── home/
@@ -153,6 +169,8 @@ O design foi implementado para funcionar perfeitamente em dispositivos desktop, 
 │   ├── context/
 │   │   ├── CartContext.tsx
 │   │   └── ThemeContext.tsx
+│   ├── data/
+│   │   └── products.ts
 │   ├── docs/
 │   │   └── documentation.md
 │   ├── hooks/
@@ -178,9 +196,11 @@ O design foi implementado para funcionar perfeitamente em dispositivos desktop, 
 ## Desempenho e Otimizações
 
 - Lazy loading para imagens
+- Estados de carregamento (skeletons)
 - Componentes interativos carregados sob demanda
 - Estado local para operações frequentes
 - Persistência em localStorage para dados do usuário
+- Centralização de dados para evitar duplicação
 
 ## Integração de Redes Sociais
 
@@ -200,6 +220,7 @@ Este projeto foi estruturado para ser facilmente extensível:
 2. **Novos Idiomas**: Basta adicionar traduções ao objeto de idiomas
 3. **Novos Temas**: A configuração do Tailwind permite adicionar novos temas
 4. **Novas Páginas**: O sistema de rotas pode ser estendido facilmente
+5. **Novos Produtos**: Basta adicioná-los ao arquivo centralizado de produtos
 
 ## Como usar esta documentação
 
@@ -212,4 +233,4 @@ Esta documentação pode ser utilizada como:
 
 ---
 
-© 2025 Akemi Cat Cafe - Todos os direitos reservados
+© 2025 Lisa's Cafe - Todos os direitos reservados

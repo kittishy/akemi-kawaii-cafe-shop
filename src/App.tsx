@@ -31,7 +31,7 @@ const App = () => {
           <div className="w-24 h-24 mx-auto mb-4 relative">
             <img 
               src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
-              alt="Akemi Loading" 
+              alt="Lisa's Cafe Loading" 
               className="w-full h-full object-contain animate-bounce opacity-70" 
             />
           </div>

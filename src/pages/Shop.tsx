@@ -5,10 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { useCart } from "@/context/CartContext";
-import { Product } from "@/context/CartContext";
 import { Heart, ShoppingCart, Filter } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
+import { Skeleton } from "@/components/ui/skeleton";
+import { products } from "@/data/products";
 import {
   Select,
   SelectContent,
@@ -16,109 +17,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-
-// Mock data - In a real app, this would come from an API
-const mockProducts: Product[] = [
-  {
-    id: "1",
-    title: "Café Mocha Gatinho",
-    price: 18.90,
-    image: "/placeholder.svg",
-    description: "Nosso café mocha especial com chantilly em formato de pata de gato",
-    category: "coffee",
-    rating: 4.9,
-    likes: 30,
-    stock: 15
-  },
-  {
-    id: "2",
-    title: "Expresso Akemi",
-    price: 12.50,
-    image: "/placeholder.svg",
-    description: "Expresso forte com um toque de canela e arte latte em forma de gatinho",
-    category: "coffee",
-    rating: 4.8,
-    likes: 25,
-    stock: 20
-  },
-  {
-    id: "3",
-    title: "Cappuccino Kawaii",
-    price: 16.90,
-    image: "/placeholder.svg",
-    description: "Cappuccino cremoso com chocolate em pó e marshmallows coloridos",
-    category: "coffee",
-    rating: 4.7,
-    likes: 28,
-    stock: 12
-  },
-  {
-    id: "4",
-    title: "Milkshake de Morango",
-    price: 22.90,
-    image: "/placeholder.svg",
-    description: "Delicioso milkshake de morango com chantilly e orelhas de gato",
-    category: "milkshake",
-    rating: 4.9,
-    likes: 35,
-    stock: 10
-  },
-  {
-    id: "5",
-    title: "Milkshake de Lavanda",
-    price: 23.90,
-    image: "/placeholder.svg",
-    description: "Milkshake com sabor suave de lavanda e cobertura especial",
-    category: "milkshake",
-    rating: 4.5,
-    likes: 27,
-    stock: 8
-  },
-  {
-    id: "6",
-    title: "Milkshake de Caramelo",
-    price: 21.90,
-    image: "/placeholder.svg",
-    description: "Milkshake com calda de caramelo caseiro e chantilly",
-    category: "milkshake",
-    rating: 4.6,
-    likes: 22,
-    stock: 14
-  },
-  {
-    id: "7",
-    title: "Chá Verde com Sakura",
-    price: 15.90,
-    image: "/placeholder.svg",
-    description: "Chá verde japonês com essência de flor de cerejeira",
-    category: "tea",
-    rating: 4.7,
-    likes: 19,
-    stock: 18
-  },
-  {
-    id: "8",
-    title: "Chá de Lavanda",
-    price: 14.90,
-    image: "/placeholder.svg",
-    description: "Chá relaxante de lavanda com um toque de mel",
-    category: "tea",
-    rating: 4.5,
-    likes: 15,
-    stock: 20
-  },
-  {
-    id: "9",
-    title: "Caneca Akemi",
-    price: 34.90,
-    image: "/placeholder.svg",
-    description: "Caneca de cerâmica com estampa da Akemi",
-    category: "merchandise",
-    rating: 4.8,
-    likes: 42,
-    stock: 7
-  }
-];
 
 const categories = [
   { value: "all", label: "Todos" },
@@ -130,16 +28,24 @@ const categories = [
 
 const Shop = () => {
   const { addItem } = useCart();
-  const [filteredProducts, setFilteredProducts] = useState(mockProducts);
+  const [filteredProducts, setFilteredProducts] = useState(products);
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [priceRange, setPriceRange] = useState([0, 50]);
   const [likedProducts, setLikedProducts] = useState<Record<string, boolean>>({});
+  const [loadingImages, setLoadingImages] = useState<Record<string, boolean>>({});
   
   const toggleLike = (productId: string) => {
     setLikedProducts(prev => ({
       ...prev,
       [productId]: !prev[productId]
+    }));
+  };
+
+  const handleImageLoad = (productId: string) => {
+    setLoadingImages(prev => ({
+      ...prev,
+      [productId]: false
     }));
   };
   
@@ -160,7 +66,7 @@ const Shop = () => {
   };
   
   const filterProducts = (query: string, category: string, price: number[]) => {
-    let filtered = mockProducts;
+    let filtered = products;
     
     // Filter by search query
     if (query) {
@@ -188,7 +94,7 @@ const Shop = () => {
       {/* Hero banner */}
       <div className="bg-akemi-baby-blue/20 dark:bg-akemi-dark-blue/20 py-10">
         <div className="container text-center">
-          <h1 className="font-display text-3xl md:text-4xl font-bold mb-4">Loja Akemi Cat Cafe</h1>
+          <h1 className="font-display text-3xl md:text-4xl font-bold mb-4">Loja Lisa's Cafe</h1>
           <p className="text-muted-foreground max-w-lg mx-auto">
             Explore nossa coleção de cafés e produtos especiais inspirados em gatinhos
           </p>
@@ -260,7 +166,7 @@ const Shop = () => {
                 <div className="bg-accent/20 rounded-lg p-3 text-sm">
                   <p className="font-medium">20% OFF nos milkshakes!</p>
                   <p className="text-muted-foreground text-xs mt-1">
-                    Use o cupom: AKEMILOVE
+                    Use o cupom: LISALOVE
                   </p>
                 </div>
               </CardContent>
@@ -311,10 +217,14 @@ const Shop = () => {
                           className={`h-5 w-5 ${likedProducts[product.id] ? "fill-red-500 text-red-500" : "text-muted-foreground"}`} 
                         />
                       </Button>
+                      {loadingImages[product.id] !== false && (
+                        <Skeleton className="absolute inset-0 w-full h-full" />
+                      )}
                       <img 
                         src={product.image}
                         alt={product.title}
-                        className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                        className={`w-full h-full object-cover transition-transform group-hover:scale-105 ${loadingImages[product.id] !== false ? 'opacity-0' : 'opacity-100'}`}
+                        onLoad={() => handleImageLoad(product.id)}
                       />
                     </div>
                     <CardContent className="p-4 space-y-2">
