@@ -1,21 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  --primary: #F8E8EE; /* Light Pink */
+  --secondary: #FAE8E0; /* Beige */
+  --tertiary: #E1D7C6; /* Cream */
+  --text-color: #333; /* Dark text for contrast */
+  --background-color: #fff; /* White background */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Arial', sans-serif; 
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+#root {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+
+a {
+  color: var(--secondary);
 }
 
 @keyframes logo-spin {

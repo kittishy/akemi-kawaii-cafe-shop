@@ -10,6 +10,12 @@ const Shop = () => {
   const {
     filteredProducts,
     searchQuery,
+    setSearchQuery,
+    categories,
+    setCategories,
+    setPriceRange,
+    minPrice,
+    maxPrice,
     selectedCategory,
     priceRange,
     handleSearch,
@@ -17,13 +23,31 @@ const Shop = () => {
     handlePriceChange
   } = useProductFilter(products);
   
+  const handleFilterClear = () => {
+    setSearchQuery("");
+    setCategories([]);
+    setPriceRange([minPrice, maxPrice]);
+  };
+
   return (
     <Layout>
-      {/* Hero banner */}
-      <ShopHero />
-      
-      {/* Shop content */}
-      <div className="container py-8">
+      {/* Hero Section */}
+      <ShopHero
+        title="Lisa's Cafe"
+        subtitle="Discover Our Delicious Treats!"
+        backgroundImage="/images/shop-hero.jpg"
+        categoryCount={categories.length}
+        filterCount={
+          (searchQuery ? 1 : 0) +
+          (selectedCategory !== null ? 1 : 0) +
+          (priceRange[0] !== minPrice || priceRange[1] !== maxPrice ? 1 : 0)
+        }
+        onFilterClear={handleFilterClear}
+      />
+
+      {/* Main Content Area */}
+      <div className="container py-10">
+        {/* Product Filters and Grid */}
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar filters */}
           <FilterSidebar 

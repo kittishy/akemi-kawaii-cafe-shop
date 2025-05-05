@@ -1,6 +1,5 @@
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
@@ -9,6 +8,7 @@ import { Heart, ShoppingCart } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { featuredProducts } from "@/data/products";
 import { Skeleton } from "@/components/ui/skeleton";
+import { Link } from "react-router-dom";
 
 export function FeaturedProducts() {
   const { t } = useTheme();
@@ -29,12 +29,20 @@ export function FeaturedProducts() {
       [productId]: false
     }));
   };
-  
+
+  useEffect(() => {
+    // Reset loading state for images when the component mounts or re-renders
+    const initialLoadingState: Record<string, boolean> = {};
+    featuredProducts.forEach((product) => (initialLoadingState[product.id] = true));
+    setLoadingImages(initialLoadingState);
+  }, []);
+
   return (
-    <section className="py-16 bg-background">
-      <div className="container">
+    <section className="py-16 bg-muted">
+      <div className="container ">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-display text-3xl font-bold">{t("products.trending")}</h2>
+          <h2 className="font-display text-3xl font-bold">Lisa's Specials</h2>
+          <p className="text-muted-foreground mt-2">Check out our current specials.</p>
           <p className="text-muted-foreground mt-2">{t("products.explore")}</p>
         </div>
         
@@ -42,10 +50,10 @@ export function FeaturedProducts() {
           {featuredProducts.map((product) => (
             <Card key={product.id} className="overflow-hidden group hover:shadow-lg transition-all">
               <div className="aspect-square relative">
-                <Badge variant="secondary" className="absolute top-2 left-2 z-10">
-                  {product.category === "coffee" ? "Café" : "Milkshake"}
-                </Badge>
-                <Button
+              <Badge variant="secondary" className="absolute top-2 left-2 z-10">
+                {product.category === "coffee" ? "Coffee" : "Milkshake"}
+              </Badge>
+              <Button
                   variant="ghost"
                   size="icon"
                   className="absolute top-2 right-2 z-10 bg-background/50 backdrop-blur-sm hover:bg-background/80"
@@ -71,11 +79,13 @@ export function FeaturedProducts() {
                   <span className="font-bold">R$ {product.price.toFixed(2)}</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1">
                     <span className="text-yellow-500">★</span>
-                    <span className="text-sm text-muted-foreground">{product.rating} ({product.likes} likes)</span>
-                  </div>
-                  <Button size="sm" variant="outline" onClick={() => addItem(product)}>
+                    <span className="text-sm text-muted-foreground">{product.rating}
+                      ({product.likes} likes)
+                    </span>
+                </div>
+                <Button size="sm" variant="outline" onClick={() => addItem(product)}>
                     <ShoppingCart className="h-4 w-4 mr-2" />
                     Adicionar
                   </Button>
@@ -84,13 +94,13 @@ export function FeaturedProducts() {
             </Card>
           ))}
         </div>
-        
+
         <div className="text-center mt-12">
-          <Button asChild variant="outline" className="rounded-full px-8">
-            <Link to="/shop">Ver mais produtos</Link>
-          </Button>
+        <Button asChild variant="outline" className="rounded-full px-8">
+          <Link to="/shop">Explore Our Menu</Link>
+        </Button>
         </div>
       </div>
     </section>
-  );
+);
 }

@@ -44,10 +44,10 @@ export function GamificationSection() {
   const [showAll, setShowAll] = useState(false);
   
   return (
-    <section className="py-16 bg-akemi-cream dark:bg-gray-900">
+    <section className="py-16 bg-lisa-cream dark:bg-gray-900">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-display text-3xl font-bold">Seu Progresso Meow!</h2>
+          <h2 className="font-display text-3xl font-bold">Your Progress!</h2>
           <p className="text-muted-foreground mt-2">Colete conquistas e suba no ranking de clientes</p>
         </div>
         
@@ -58,7 +58,7 @@ export function GamificationSection() {
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium">Nível 2: Gatinho Curioso</span>
+                  <span className="text-sm font-medium">Level 2: Curious Cat</span>
                   <span className="text-sm text-muted-foreground">150/300 pontos</span>
                 </div>
                 <Progress value={50} className="h-2" />
@@ -68,7 +68,7 @@ export function GamificationSection() {
                 <h4 className="font-medium mb-2">Próximos benefícios:</h4>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
-                    <span className="w-5 h-5 bg-akemi-baby-blue rounded-full flex items-center justify-center text-white text-xs">✓</span>
+                    <span className="w-5 h-5 bg-lisa-baby-blue rounded-full flex items-center justify-center text-white text-xs">✓</span>
                     <span>Frete grátis em compras acima de R$50</span>
                   </li>
                   <li className="flex items-center gap-2">
@@ -81,9 +81,9 @@ export function GamificationSection() {
               <div>
                 <h4 className="font-medium mb-2">Como ganhar mais pontos:</h4>
                 <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>• Realizar compras: 10 pontos por R$10</li>
-                  <li>• Avaliar produtos: 5 pontos por avaliação</li>
-                  <li>• Compartilhar nas redes sociais: 15 pontos</li>
+                  <li>• Make a purchase: 10 points per $10</li>
+                  <li>• Rate products: 5 points per rating</li>
+                  <li>• Share on social media: 15 points</li>
                 </ul>
               </div>
             </div>
