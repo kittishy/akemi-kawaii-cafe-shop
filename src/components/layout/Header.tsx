@@ -45,11 +45,14 @@ export function Header() {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img
- src="/lovable-uploads/lisa-cafe-logo.png"
+            <img 
+              src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
               alt="Lisa's Cafe" 
-              className="h-[50px] object-contain"
+              className="h-10 w-10 object-contain rounded-full" 
             />
+            <span className="font-display font-bold text-lg md:text-xl text-primary">
+              Lisa's<span className="text-accent">Cafe</span>
+            </span>
           </Link>
         </div>
         
