@@ -1,122 +1,122 @@
-
 # Documentação: Lisa's Cafe E-Commerce
 
 ## Visão Geral do Projeto
 
-Este projeto é um e-commerce de café temático inspirado em gatos anime, tendo como mascote principal a personagem Lisa, uma gatinha kawaii. A interface do site foi projetada utilizando a estética "fofo e pastel" com uma paleta de cores predominantemente em tons de azul bebê, cinza suave, branco e lavanda.
+Lisa's Cafe é um e-commerce temático de cafés especiais com inspiração no universo de gatinhos em estilo anime. O mascote do projeto é a Lisa, uma gatinha kawaii que representa a identidade visual da marca. A interface do site utiliza uma estética “fofa e pastel”, com destaque para tons suaves de azul bebê, lavanda, branco, pêssego e cinza.
 
-### Tema e Identidade Visual
+## Identidade Visual
 
-- **Mascote**: Lisa, uma personagem gatinha anime que serve como identidade visual do site
-- **Paleta de Cores**: 
-  - Azul bebê (#BAD7F2)
-  - Lavanda (#E2D1F9)
-  - Cinza suave (#F0F0F0)
-  - Branco (#FFFFFF)
-  - Pêssego (#FFE5D9)
-  - Versão escura com variantes mais profundas dos mesmos tons
+* **Mascote**: Lisa, uma gatinha em estilo anime que aparece em ilustrações e ícones do site.
+* **Paleta de Cores**:
 
-### Tecnologias Utilizadas
+  * Azul bebê (#BAD7F2)
+  * Lavanda (#E2D1F9)
+  * Cinza suave (#F0F0F0)
+  * Branco (#FFFFFF)
+  * Pêssego (#FFE5D9)
+  * Versão escura com variações mais profundas dessas cores.
 
-- React
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- React Router DOM
-- TanStack Query
-- Supabase
+## Tecnologias Utilizadas
+
+* React
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+* React Router DOM
+* TanStack Query
+* Supabase
 
 ## Estrutura do Projeto
 
-### Principais Componentes
+### Componentes Principais
 
 1. **Layout**
-   - Header (Navegação, alternador de tema, troca de idioma, carrinho)
-   - Footer (Links, redes sociais, informações de contato)
+
+   * **Header**: Navegação principal, troca de tema, idiomas e carrinho.
+   * **Footer**: Informações institucionais, redes sociais e contatos.
 
 2. **Páginas**
-   - Home (Página inicial com apresentação da marca)
-   - Shop (Loja com filtros e produtos)
-   - Outras páginas (About, Blog, Contact, etc.)
 
-3. **Componentes de Interatividade**
-   - Carrinho de compras
-   - Sistema de filtros para produtos
-   - Sistema de gamificação (conquistas, ranking)
-   - Newsletter
+   * **Home**: Apresentação da marca.
+   * **Shop**: Catálogo de produtos com filtros.
+   * **Outras**: About, Blog, Contact, entre outras.
+
+3. **Componentes Interativos**
+
+   * Carrinho de compras
+   * Filtros de busca
+   * Sistema de conquistas e fidelidade
+   * Newsletter
 
 ### Contextos
 
-1. **ThemeContext**
-   - Gerencia tema claro/escuro
-   - Gerencia idioma (pt-BR/en-US)
-   - Fornece traduções para componentes
+* **ThemeContext**:
 
-2. **CartContext**
-   - Gerencia o estado do carrinho de compras
-   - Adiciona, remove e atualiza itens
-   - Calcula totais
+  * Alternância entre temas claro e escuro
+  * Gerenciamento de idioma e traduções
+
+* **CartContext**:
+
+  * Gerenciamento do carrinho de compras
+  * Adição, remoção e atualização de itens
+  * Cálculo de totais
 
 ### Dados
 
-1. **Produtos**
-   - Armazenados de forma centralizada em `src/data/products.ts`
-   - Exporta arrays específicos para diferentes seções (featured, milkshakes, etc.)
-   - Cada produto inclui imagens, descrições, preços e metadados
+* **Produtos**:
 
-## Funcionalidades Principais
+  * Armazenados em `src/data/products.ts`
+  * Organizados por categorias (ex: destaque, milkshakes, etc.)
+  * Contêm imagens, descrições, preços e metadados.
 
-### 1. Layout Responsivo
+## Funcionalidades
 
-O design foi implementado para funcionar perfeitamente em dispositivos desktop, tablet e mobile, com componentes específicos que se adaptam a cada formato.
+### Layout Responsivo
 
-### 2. Sistema de Tema Claro/Escuro
+Compatível com desktops, tablets e smartphones. Componentes adaptativos garantem boa usabilidade em todos os dispositivos.
 
-- Permite alternar entre temas claro e escuro
-- Detecta e usa a preferência do sistema como padrão inicial
-- Salva a preferência no localStorage
+### Tema Claro/Escuro
 
-### 3. Internacionalização (i18n)
+* Alternância manual ou automática baseada na preferência do sistema.
+* Persistência da escolha do usuário via `localStorage`.
 
-- Suporte a múltiplos idiomas (Português Brasil e Inglês)
-- Hook `useTheme` fornece função `t()` para tradução
-- Detecção automática de idioma do navegador
+### Internacionalização
 
-### 4. Carrinho de Compras
+* Suporte a Português (Brasil) e Inglês (EUA)
+* Traduções centralizadas acessadas via `t()`
+* Detecção automática do idioma do navegador
 
-- Adição/remoção de produtos
-- Atualização de quantidades
-- Persistência no localStorage
-- Exibição de notificações ao alterar o carrinho
+### Carrinho de Compras
 
-### 5. Filtros e Busca
+* Adição e remoção de itens
+* Atualização de quantidades
+* Persistência no `localStorage`
+* Feedback visual e sonoro para interações
 
-- Filtros por categoria
-- Filtros por faixa de preço
-- Busca por texto
+### Filtros e Busca
 
-### 6. Sistema de Gamificação
+* Filtro por categoria e faixa de preço
+* Busca por palavra-chave
 
-- Conquistas visuais
-- Sistema de pontos de fidelidade
-- Níveis de usuário
+### Gamificação
 
-## Estilização e Design
+* Sistema de conquistas visuais
+* Pontuação por interações e compras
+* Níveis de usuário com recompensas
 
-### Componentes personalizados
+## Estilo e Animações
 
-- Cards com estilo kawaii
-- Botões arredondados
-- Efeitos de hover sutis
-- Animações suaves (flutuação, fade-in/out)
+### Componentes Personalizados
+
+* Cards com bordas arredondadas e estética kawaii
+* Botões com efeito hover e animações suaves
 
 ### Otimização de Imagens
 
-- Esqueleto de carregamento (loading skeletons)
-- Transições suaves ao carregar imagens
-- Efeitos de hover em imagens (scale)
+* Skeleton loaders durante o carregamento
+* Transições suaves e efeitos de escala
 
-### Classes Tailwind customizadas
+### Exemplo de Classes Customizadas com Tailwind
 
 ```css
 .cat-card {
@@ -128,28 +128,26 @@ O design foi implementado para funcionar perfeitamente em dispositivos desktop, 
 }
 ```
 
-## Estratégias de Design Emocional
+## Design Emocional
 
 ### Microinterações
 
-- Animações sutis nos elementos de UI
-- Feedback visual ao interagir com produtos
-- Ícones de pata de gato em elementos decorativos
+* Animações discretas e feedback visual nos elementos interativos
+* Ícones temáticos com pegadas de gato e elementos animados
 
-### Elementos de Marketing
+### Estratégias de Conversão
 
-- Prova social (avaliações e likes)
-- Gatilhos de escassez (indicadores de estoque)
-- CTA's proeminentes e amigáveis
+* Avaliações e depoimentos
+* Indicadores de estoque baixo
+* Chamadas para ação claras e visíveis
 
 ## Estrutura de Arquivos
 
 ```
 ├── public/
-│   └── lovable-uploads/
-│       └── 7eda1067-8586-41ec-8b78-50ec5763e70a.png (mascote Lisa)
-│       └── coffee-mocha-lisa.jpg (imagens de produtos)
-│       └── ...
+│   └── uploads/
+│       └── lisa.png
+│       └── coffee-mocha-lisa.jpg
 ├── src/
 │   ├── components/
 │   │   ├── home/
@@ -171,8 +169,6 @@ O design foi implementado para funcionar perfeitamente em dispositivos desktop, 
 │   │   └── ThemeContext.tsx
 │   ├── data/
 │   │   └── products.ts
-│   ├── docs/
-│   │   └── documentation.md
 │   ├── hooks/
 │   │   └── use-toast.ts
 │   ├── pages/
@@ -186,51 +182,41 @@ O design foi implementado para funcionar perfeitamente em dispositivos desktop, 
 └── vite.config.ts
 ```
 
-## Práticas de Acessibilidade
+## Acessibilidade
 
-- Labels apropriados para ícones (screen readers)
-- Contraste adequado entre texto e fundos
-- Estrutura semântica HTML
-- Feedback visual claro para interações
+* Uso de `aria-label` e atributos semânticos
+* Contraste adequado entre texto e plano de fundo
+* Indicadores visuais para ações de foco e clique
 
-## Desempenho e Otimizações
+## Otimizações
 
-- Lazy loading para imagens
-- Estados de carregamento (skeletons)
-- Componentes interativos carregados sob demanda
-- Estado local para operações frequentes
-- Persistência em localStorage para dados do usuário
-- Centralização de dados para evitar duplicação
+* Lazy loading de imagens
+* Skeletons para carregamento
+* Código dividido por rotas e componentes
+* Uso de estados locais para performance
+* Dados persistidos no `localStorage` quando necessário
 
-## Integração de Redes Sociais
+## Redes Sociais
 
-O site inclui links para todas as redes sociais solicitadas:
-- Pinterest
-- Instagram
-- Spotify
-- Discord
-- Twitter
-- GitHub
+O site contém links para os seguintes perfis oficiais:
+
+* Instagram
+* Pinterest
+* Spotify
+* Discord
+* Twitter
+* GitHub
 
 ## Extensibilidade
 
-Este projeto foi estruturado para ser facilmente extensível:
+Projetado para facilitar a evolução do sistema:
 
-1. **Novos Componentes**: A estrutura modular facilita adicionar novos componentes
-2. **Novos Idiomas**: Basta adicionar traduções ao objeto de idiomas
-3. **Novos Temas**: A configuração do Tailwind permite adicionar novos temas
-4. **Novas Páginas**: O sistema de rotas pode ser estendido facilmente
-5. **Novos Produtos**: Basta adicioná-los ao arquivo centralizado de produtos
-
-## Como usar esta documentação
-
-Esta documentação pode ser utilizada como:
-
-1. Guia para o desenvolvimento continuado do projeto
-2. Referência para implementação de recursos similares em outros projetos
-3. Material para avaliação de qualidade e estrutura do código
-4. Base para treinamento de IA sobre desenvolvimento de e-commerce temático
+* **Novos Componentes**: Estrutura modular
+* **Novos Idiomas**: Sistema de traduções escalável
+* **Novos Temas**: Configuração de design flexível via Tailwind
+* **Novas Páginas**: Sistema de rotas dinâmico
+* **Novos Produtos**: Adição fácil via arquivo centralizado
 
 ---
 
-© 2025 Lisa's Cafe - Todos os direitos reservados
+© 2025 Lisa's Cafe – Todos os direitos reservados.
