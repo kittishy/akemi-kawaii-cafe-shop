@@ -8,7 +8,7 @@ export function HeroSection() {
   
   return (
     <section className="relative overflow-hidden">
-      {/* Background with wave effect */}
+      {/* Background with wave effect */}      
       <div className="absolute inset-0 bg-akemi-cream dark:bg-akemi-dark-blue/20 -z-10">
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-background" 
              style={{ clipPath: "ellipse(70% 100% at 50% 100%)" }}></div>
@@ -22,7 +22,7 @@ export function HeroSection() {
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
               {t("hero.title")}
-              <span className="text-primary block mt-1">Akemi</span>
+              <span className="text-primary block mt-1">Lisa's Café</span>
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl max-w-md">
               {t("hero.subtitle")}
@@ -33,7 +33,7 @@ export function HeroSection() {
                 <Link to="/shop">{t("hero.cta")}</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-full px-8">
-                <Link to="/about">Conheça a Akemi</Link>
+                <Link to="/about">Conheça a Lisa's Café</Link>
               </Button>
             </div>
             
@@ -61,8 +61,8 @@ export function HeroSection() {
             
             <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-xl animate-float">
               <img 
-                src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
-                alt="Akemi Mascote" 
+                src="/lovable-uploads/lisa-cafe-logo.png" 
+                alt="Lisa's Café Mascote" 
                 className="w-full h-auto rounded-2xl"
               />
               
