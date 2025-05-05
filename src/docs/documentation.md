@@ -2,7 +2,7 @@
 
 ## Visão Geral do Projeto
 
-Lisa's Cafe é um e-commerce temático de cafés especiais com inspiração no universo de gatinhos em estilo anime. O mascote do projeto é a Lisa, uma gatinha kawaii que representa a identidade visual da marca. A interface do site utiliza uma estética “fofa e pastel”, com destaque para tons suaves de azul bebê, lavanda, branco, pêssego e cinza.
+Lisa's Cafe é um e-commerce temático de cafés especiais com inspiração no universo de gatinhos em estilo anime. O mascote do projeto é a Lisa, uma gatinha que representa a identidade visual da marca. A interface do site utiliza uma estética “fofa e pastel”, com destaque para tons suaves de azul bebê, lavanda, branco, pêssego e cinza.
 
 ## Identidade Visual
 
@@ -108,7 +108,7 @@ Compatível com desktops, tablets e smartphones. Componentes adaptativos garante
 
 ### Componentes Personalizados
 
-* Cards com bordas arredondadas e estética kawaii
+* Cards com bordas arredondadas e estética fofa
 * Botões com efeito hover e animações suaves
 
 ### Otimização de Imagens

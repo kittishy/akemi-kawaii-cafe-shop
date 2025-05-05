@@ -20,7 +20,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'kawaii': ['Quicksand', 'sans-serif'],
+        
         'display': ['Poppins', 'sans-serif'],
       },
       colors: {

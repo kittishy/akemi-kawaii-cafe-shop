@@ -23,7 +23,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Café inspirado em gatinhos para alegrar seu dia. Produtos exclusivos com temática kawaii!
+              Café inspirado em gatinhos para alegrar seu dia. Produtos exclusivos com temática fofa!
             </p>
           </div>
           

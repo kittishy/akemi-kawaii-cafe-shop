@@ -27,7 +27,7 @@ export const products: Product[] = [
   },
   {
     id: "3",
-    title: "Cappuccino Kawaii",
+    title: "Cappuccino",
     price: 16.90,
     image: "/lovable-uploads/lisa-cappuccino.png",
     description: "Cappuccino cremoso com chocolate em pó e marshmallows coloridos",
