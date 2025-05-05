@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { useTheme, ThemeContextType } from "@/context/ThemeContext";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
 
@@ -7,6 +8,24 @@ export function NewsletterSection() {
     const [email, setEmail] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     const { toast } = useToast();
+    const { language } = useTheme() as ThemeContextType;
+    const [content, setContent] = useState({
+        title: "",
+        description: "",
+        inputPlaceholder: "",
+        subscribeButton: "",
+        terms: ""
+    });
+
+    useEffect(() => {
+        setContent(language === "pt-BR" ? {
+            title: "Mantenha-se Atualizado com o Lisa's Café",
+            description: "Receba ofertas exclusivas, dicas de café e novidades sobre o Lisa's Café diretamente na sua caixa de entrada.",
+            inputPlaceholder: "Seu melhor email",
+            subscribeButton: "Inscrever-se",
+            terms: "Ao se inscrever, você concorda com nossa Política de Privacidade.<br />Nós não enviamos spam, prometemos!"
+        } : { title: "Stay Updated with Lisa's Café", description: "Get exclusive offers, coffee tips, and updates about Lisa's Café directly in your inbox.", inputPlaceholder: "Your best email", subscribeButton: "Subscribe", terms: "By subscribing, you agree to our Privacy Policy.<br />We don't send spam, we promise!" });
+    }, [language]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -34,17 +53,14 @@ export function NewsletterSection() {
 
                     <div className="relative z-10 text-center">
                         <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
-                            Stay Updated with Lisa's Café
+                           {content.title}
                         </h2>
                         <p className="text-muted-foreground mb-6 max-w-lg mx-auto">
-                            Get exclusive offers, coffee tips, and updates about Lisa's Café directly in your inbox.
+                            {content.description}
                         </p>
 
                         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                            <Input type="email" placeholder="Your best email" value={email} onChange={(e) => setEmail(e.target.value)} required className="rounded-full" />
-                            <Button type="submit" disabled={isLoading} className="rounded-full">
-                                {isLoading ? "Subscribing..." : "Subscribe"}
-                            </Button>
+                            <Input type="email" placeholder={content.inputPlaceholder} value={email} onChange={(e) => setEmail(e.target.value)} required className="rounded-full" /><Button type="submit" disabled={isLoading} className="rounded-full">{isLoading ? "Subscribing..." : content.subscribeButton}</Button>
                         </form>
 
                         <p className="text-xs text-muted-foreground mt-4">By subscribing, you agree to our Privacy Policy.<br />We don't send spam, we promise!</p>

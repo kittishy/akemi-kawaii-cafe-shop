@@ -10,7 +10,7 @@ import { featuredProducts } from "@/data/products";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Link } from "react-router-dom";
 
-export function FeaturedProducts() {
+export function FeaturedProducts(){
   const { t } = useTheme();
   const { addItem } = useCart();
   const [likedProducts, setLikedProducts] = useState<Record<string, boolean>>({});
@@ -41,8 +41,12 @@ export function FeaturedProducts() {
     <section className="py-16 bg-muted">
       <div className="container ">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-display text-3xl font-bold">Lisa's Specials</h2>
-          <p className="text-muted-foreground mt-2">Check out our current specials.</p>
+          <h2 className="font-display text-3xl font-bold">{t("specials.title")}</h2>
+          <p className="text-muted-foreground mt-2">
+            {t("specials.description")}
+          </p>
+
+        
           <p className="text-muted-foreground mt-2">{t("products.explore")}</p>
         </div>
         

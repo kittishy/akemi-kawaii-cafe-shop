@@ -1,5 +1,6 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTheme } from "@/context/ThemeContext";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -41,14 +42,32 @@ const achievements = [
 ];
 
 export function GamificationSection() {
+  const { language } = useTheme();
   const [showAll, setShowAll] = useState(false);
+  const [gamificationText, setGamificationText] = useState<{
+    progressTitle: string;
+    level: string;
+    purchasePoints: string;
+    ratePoints: string;
+    sharePoints: string;
+  }>({
+    progressTitle: "",
+    level: "",
+    purchasePoints: "",
+    ratePoints: "",
+    sharePoints: "",
+  });
+
+  useEffect(() => {
+    setGamificationText(getGamificationText(language));
+  }, [language]);
   
   return (
     <section className="py-16 bg-lisa-cream dark:bg-gray-900">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-display text-3xl font-bold">Your Progress!</h2>
-          <p className="text-muted-foreground mt-2">Colete conquistas e suba no ranking de clientes</p>
+          <h2 className="font-display text-3xl font-bold">{gamificationText.progressTitle}</h2>
+          <p className="text-muted-foreground mt-2">{language === "pt-BR" ? "Colete conquistas e suba no ranking de clientes" : "Collect achievements and climb the customer ranking"}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -58,7 +77,7 @@ export function GamificationSection() {
             <div className="space-y-6">
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <span className="text-sm font-medium">Level 2: Curious Cat</span>
+                  <span className="text-sm font-medium">{gamificationText.level}</span>
                   <span className="text-sm text-muted-foreground">150/300 pontos</span>
                 </div>
                 <Progress value={50} className="h-2" />
@@ -81,9 +100,9 @@ export function GamificationSection() {
               <div>
                 <h4 className="font-medium mb-2">Como ganhar mais pontos:</h4>
                 <ul className="space-y-1 text-sm text-muted-foreground">
-                  <li>• Make a purchase: 10 points per $10</li>
-                  <li>• Rate products: 5 points per rating</li>
-                  <li>• Share on social media: 15 points</li>
+                  <li>{gamificationText.purchasePoints}</li>
+                  <li>{gamificationText.ratePoints}</li>
+                  <li>{gamificationText.sharePoints}</li>
                 </ul>
               </div>
             </div>
@@ -124,3 +143,24 @@ export function GamificationSection() {
     </section>
   );
 }
+
+function getGamificationText(language: string) {
+  if (language === "pt-BR") {
+    return {
+      progressTitle: "Seu Progresso!",
+      level: "Nível 2: Gato Curioso",
+      purchasePoints: "• Faça uma compra: 10 pontos a cada R$10",
+      ratePoints: "• Avalie produtos: 5 pontos por avaliação",
+      sharePoints: "• Compartilhe nas redes sociais: 15 pontos",
+    };
+  } else {
+    return {
+      progressTitle: "Your Progress!",
+      level: "Level 2: Curious Cat",
+      purchasePoints: "• Make a purchase: 10 points per $10",
+      ratePoints: "• Rate products: 5 points per rating",
+      sharePoints: "• Share on social media: 15 points",
+    };
+  }
+}
+
