@@ -17,11 +17,11 @@ export function MilkshakeSection() {
       [productId]: false
     }));
   };
-
+  
   return (
-    <section className="py-16 bg-lisa-soft-pink dark:bg-gray-900">
+    <section className="py-16 bg-akemi-soft-gray dark:bg-gray-900">
       <div className="container">
-        <div className="text-center max-w-2xl mx-auto mb-12 text-lisa-dark-brown">
+        <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="font-display text-3xl font-bold">Milkshakes Especiais</h2>
           <p className="text-muted-foreground mt-2">Feitos com muito carinho e decorações fofas</p>
         </div>
@@ -34,13 +34,13 @@ export function MilkshakeSection() {
                   {loadingImages[shake.id] !== false && (
                     <Skeleton className="absolute inset-0 w-full h-full" />
                   )}
-                  <img
+                  <img 
                     src={shake.image}
                     alt={shake.title}
                     className={`w-full h-full object-cover transition-all group-hover:scale-105 ${loadingImages[shake.id] !== false ? 'opacity-0' : 'opacity-100'}`}
                     onLoad={() => handleImageLoad(shake.id)}
                   />
-                </div> 
+                </div>
                 <CardContent className="p-0 space-y-3">
                   <Badge variant="outline" className="bg-accent/10 text-accent-foreground border-accent/20">
                     {shake.likes} likes

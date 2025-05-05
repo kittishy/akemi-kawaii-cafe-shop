@@ -1,122 +1,122 @@
-# Documentation: Lisa's Cafe E-Commerce.
+# Documentação: Lisa's Cafe E-Commerce
 
-## Project Overview
+## Visão Geral do Projeto
 
-Lisa's Cafe is a specialty coffee-themed e-commerce platform inspired by the anime-style cat universe. The project's mascot is Lisa, a kawaii cat representing the brand's visual identity. The site's interface uses a "cute and pastel" aesthetic, highlighting soft shades of baby blue, lavender, white, peach, and gray.
+Lisa's Cafe é um e-commerce temático de cafés especiais com inspiração no universo de gatinhos em estilo anime. O mascote do projeto é a Lisa, uma gatinha kawaii que representa a identidade visual da marca. A interface do site utiliza uma estética “fofa e pastel”, com destaque para tons suaves de azul bebê, lavanda, branco, pêssego e cinza.
 
-## Visual Identity
+## Identidade Visual
 
-*   **Mascot**: Lisa, an anime-style cat that appears in the site's illustrations and icons.
-*   **Color Palette**:
+* **Mascote**: Lisa, uma gatinha em estilo anime que aparece em ilustrações e ícones do site.
+* **Paleta de Cores**:
 
-    *   Baby Blue (#BAD7F2).
-    *   Lavender (#E2D1F9)
-    *   Soft Gray (#F0F0F0)
-    *   White (#FFFFFF)
-    *   Peach (#FFE5D9)
-    *   Dark version with deeper variations of these colors.
+  * Azul bebê (#BAD7F2)
+  * Lavanda (#E2D1F9)
+  * Cinza suave (#F0F0F0)
+  * Branco (#FFFFFF)
+  * Pêssego (#FFE5D9)
+  * Versão escura com variações mais profundas dessas cores.
 
-## Technologies Used
+## Tecnologias Utilizadas
 
-*   React
-*   TypeScript
-*   Tailwind CSS
-*   shadcn/ui
-*   React Router DOM
-*   TanStack Query
-*   Supabase
+* React
+* TypeScript
+* Tailwind CSS
+* shadcn/ui
+* React Router DOM
+* TanStack Query
+* Supabase
 
-## Project Structure
+## Estrutura do Projeto
 
-### Main Components
+### Componentes Principais
 
-1.  **Layout**
+1. **Layout**
 
-    *   **Header**: Main navigation, theme toggle, languages, and cart.
-    *   **Footer**: Institutional information, social media links, and contacts.
+   * **Header**: Navegação principal, troca de tema, idiomas e carrinho.
+   * **Footer**: Informações institucionais, redes sociais e contatos.
 
-2.  **Pages**
+2. **Páginas**
 
-    *   **Home**: Brand presentation.
-    *   **Shop**: Product catalog with filters.
-    *   **Others**: About, Blog, Contact, among others.
+   * **Home**: Apresentação da marca.
+   * **Shop**: Catálogo de produtos com filtros.
+   * **Outras**: About, Blog, Contact, entre outras.
 
-3.  **Interactive Components**
+3. **Componentes Interativos**
 
-    *   Shopping cart
-    *   Search filters
-    *   Loyalty and achievement system
-    *   Newsletter
+   * Carrinho de compras
+   * Filtros de busca
+   * Sistema de conquistas e fidelidade
+   * Newsletter
 
-### Contexts
+### Contextos
 
-*   **ThemeContext**:
+* **ThemeContext**:
 
-    *   Toggle between light and dark themes
-    *   Language and translations management
+  * Alternância entre temas claro e escuro
+  * Gerenciamento de idioma e traduções
 
-*   **CartContext**:
+* **CartContext**:
 
-    *   Shopping cart management
-    *   Addition, removal, and updating of items
-    *   Total calculation
+  * Gerenciamento do carrinho de compras
+  * Adição, remoção e atualização de itens
+  * Cálculo de totais
 
-### Data
+### Dados
 
-*   **Products**:
+* **Produtos**:
 
-    *   Stored in `src/data/products.ts`
-    *   Organized by categories (e.g., featured, milkshakes, etc.)
-    *   Contain images, descriptions, prices, and metadata.
+  * Armazenados em `src/data/products.ts`
+  * Organizados por categorias (ex: destaque, milkshakes, etc.)
+  * Contêm imagens, descrições, preços e metadados.
 
-## Features
+## Funcionalidades
 
-### Responsive Layout
+### Layout Responsivo
 
-Compatible with desktops, tablets, and smartphones. Adaptive components ensure good usability on all devices.
+Compatível com desktops, tablets e smartphones. Componentes adaptativos garantem boa usabilidade em todos os dispositivos.
 
-### Light/Dark Theme
+### Tema Claro/Escuro
 
-*   Manual or automatic toggle based on system preference.
-*   User's choice persistence via `localStorage`.
+* Alternância manual ou automática baseada na preferência do sistema.
+* Persistência da escolha do usuário via `localStorage`.
 
-### Internationalization
+### Internacionalização
 
-*   Support for Portuguese (Brazil) and English (US)
-*   Centralized translations accessed via `t()`
-*   Automatic browser language detection
+* Suporte a Português (Brasil) e Inglês (EUA)
+* Traduções centralizadas acessadas via `t()`
+* Detecção automática do idioma do navegador
 
-### Shopping Cart
+### Carrinho de Compras
 
-*   Addition and removal of items
-*   Quantity updates
-*   Persistence in `localStorage`
-*   Visual and auditory feedback for interactions
+* Adição e remoção de itens
+* Atualização de quantidades
+* Persistência no `localStorage`
+* Feedback visual e sonoro para interações
 
-### Filters and Search
+### Filtros e Busca
 
-*   Filter by category and price range
-*   Keyword search
+* Filtro por categoria e faixa de preço
+* Busca por palavra-chave
 
-### Gamification
+### Gamificação
 
-*   Visual achievement system
-*   Scoring for interactions and purchases
-*   User levels with rewards
+* Sistema de conquistas visuais
+* Pontuação por interações e compras
+* Níveis de usuário com recompensas
 
-## Style and Animations
+## Estilo e Animações
 
-### Custom Components
+### Componentes Personalizados
 
-*   Cards with rounded borders and kawaii aesthetic
-*   Buttons with hover effect and smooth animations
+* Cards com bordas arredondadas e estética kawaii
+* Botões com efeito hover e animações suaves
 
-### Image Optimization
+### Otimização de Imagens
 
-*   Skeleton loaders during loading
-*   Smooth transitions and scaling effects
+* Skeleton loaders durante o carregamento
+* Transições suaves e efeitos de escala
 
-### Example of Custom Classes with Tailwind
+### Exemplo de Classes Customizadas com Tailwind
 
 ```css
 .cat-card {

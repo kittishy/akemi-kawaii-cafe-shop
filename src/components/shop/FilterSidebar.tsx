@@ -1,6 +1,5 @@
-import { useTheme } from "@/context/ThemeContext";
+
 import { Card, CardContent } from "@/components/ui/card";
-import { useEffect, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Slider } from "@/components/ui/slider";
 import { Filter } from "lucide-react";
@@ -11,6 +10,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+
+export const categories = [
+  { value: "all", label: "Todos" },
+  { value: "coffee", label: "Cafés" },
+  { value: "tea", label: "Chás" },
+  { value: "milkshake", label: "Milkshakes" },
+  { value: "merchandise", label: "Produtos" }
+];
 
 interface FilterSidebarProps {
   searchQuery: string;
@@ -25,58 +32,16 @@ export function FilterSidebar({
   searchQuery,
   selectedCategory,
   priceRange,
-  onSearchChange, // Function to handle search query changes
-  onCategoryChange, // Function to handle category changes
-  onPriceChange, // Function to handle price range changes
+  onSearchChange,
+  onCategoryChange,
+  onPriceChange
 }: FilterSidebarProps) {
-  const { language } = useTheme();
-
-  const [categories, setCategories] = useState<{ value: string; label: string }[]>([]);
-  const [filterTitles, setFilterTitles] = useState<{
-    title: string;
-    search: string;
-    category: string;
-    priceRange: string;
-    promotion: string;
-    coupon: string;
-    placeholder: string
-  }>({
-    title: "",
-    search: "",
-    category: "",
-    priceRange: "",
-    promotion: "",
-    coupon: "",
-    placeholder: ""
-  });
-
-  useEffect(() => {
-    if (language === "pt-BR") {
-      setCategories([
-        { value: "all", label: "Todos" },
-        { value: "coffee", label: "Cafés" },
-        { value: "tea", label: "Chás" },
-        { value: "milkshake", label: "Milkshakes" },
-        { value: "merchandise", label: "Produtos" },
-      ]);
-      setFilterTitles({title: "Filtros", search: "Pesquisar", category: "Categoria", priceRange: "Faixa de preço", promotion: "Promoções", coupon: "Use o cupom:", placeholder: "Digite o que procura..."})
-    } else if (language === "en-US") {
-      setCategories([
-        { value: "all", label: "All" },
-        { value: "coffee", label: "Coffees" },
-        { value: "tea", label: "Teas" },
-        { value: "milkshake", label: "Milkshakes" },
-        { value: "merchandise", label: "Merchandise" },
-      ]);
-      setFilterTitles({title: "Filters", search: "Search", category: "Category", priceRange: "Price Range", promotion: "Promotions", coupon: "Use the coupon:", placeholder: "Type what you are looking for..."})
-    }
-  }, [language]);
   return (
     <div className="lg:w-1/4 space-y-6">
       <Card>
         <CardContent className="p-4 space-y-4">
           <h3 className="font-medium flex items-center">
-            <Filter className="h-4 w-4 mr-2" /> {filterTitles.title}
+            <Filter className="h-4 w-4 mr-2" /> Filtros
           </h3>
           
           <div className="space-y-2">
@@ -84,7 +49,7 @@ export function FilterSidebar({
             <Input
               type="text"
               placeholder="Digite o que procura..."
-              placeholder={filterTitles.placeholder} value={searchQuery}
+              value={searchQuery}
               onChange={onSearchChange}
             />
           </div>
@@ -96,7 +61,7 @@ export function FilterSidebar({
               onValueChange={onCategoryChange}
             >
               <SelectTrigger className="w-full">
-                <SelectValue placeholder={filterTitles.category} />
+                <SelectValue placeholder="Selecione uma categoria" />
               </SelectTrigger>
               <SelectContent>
                 {categories.map(category => (
@@ -110,7 +75,7 @@ export function FilterSidebar({
           
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <h4 className="text-sm font-medium">{filterTitles.priceRange}</h4>
+              <h4 className="text-sm font-medium">Faixa de preço</h4>
               <span className="text-xs text-muted-foreground">
                 R${priceRange[0]} - R${priceRange[1]}
               </span>
@@ -129,11 +94,11 @@ export function FilterSidebar({
       
       <Card>
         <CardContent className="p-4">
-          <h3 className="font-medium mb-2">{filterTitles.promotion}</h3>
+          <h3 className="font-medium mb-2">Promoções</h3>
           <div className="bg-accent/20 rounded-lg p-3 text-sm">
-            <p className="font-medium">20% OFF on milkshakes!</p>
+            <p className="font-medium">20% OFF nos milkshakes!</p>
             <p className="text-muted-foreground text-xs mt-1">
-              {filterTitles.coupon} LISALOVE
+              Use o cupom: LISALOVE
             </p>
           </div>
         </CardContent>
