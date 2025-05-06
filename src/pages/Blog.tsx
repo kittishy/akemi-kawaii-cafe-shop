@@ -1,8 +1,8 @@
-
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { CalendarIcon, Clock, User } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 const blogPosts = [
   {

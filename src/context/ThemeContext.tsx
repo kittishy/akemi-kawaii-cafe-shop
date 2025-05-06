@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 type Theme = "light" | "dark";
@@ -65,22 +64,6 @@ const translations = {
     "pt-BR": "Comprar agora",
     "en-US": "Shop now"
   },
-  "products.trending": {
-    "pt-BR": "Mais Vendidos",
-    "en-US": "Top Categories"
-  },
-  "products.explore": {
-    "pt-BR": "Explore nossos produtos mais populares",
-    "en-US": "Explore our most popular products"
-  },
-  "footer.rights": {
-    "pt-BR": "Todos os direitos reservados",
-    "en-US": "All rights reserved"
-  },
-  "footer.follow": {
-    "pt-BR": "Siga-nos",
-    "en-US": "Follow us"
-  },
   "hero.badge": {
     "pt-BR": "✨ Café Temático de Gatinhos",
     "en-US": "✨ Kitty Themed Café"
@@ -92,6 +75,10 @@ const translations = {
   "hero.customers": {
     "pt-BR": "clientes satisfeitos",
     "en-US": "satisfied customers"
+  },
+  "products.trending": {
+    "pt-BR": "Mais Vendidos",
+    "en-US": "Top Categories"
   },
   "products.explore": {
     "pt-BR": "Explore nossos produtos mais populares",
