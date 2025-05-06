@@ -1,3 +1,4 @@
+
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -39,7 +40,7 @@ const blogPosts = [
     id: 4,
     title: "Decoração inspirada em gatinhos para sua casa",
     excerpt: "Ideias fofas e elegantes para trazer o estilo do Lisa's Cafe para sua casa, com elementos temáticos de gatinhos.",
-    image: "/lovable-uploads/lisa-mascot.png",
+    image: "/lovable-uploads/77e34000-1c92-4c67-877d-b08f50e4a2ce.png",
     date: "2023-02-20",
     author: "Decoradora Felina",
     readTime: "7 min",
@@ -69,7 +70,7 @@ const Blog = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               <div className="relative h-80 lg:h-auto">
                 <img 
-                  src="/lovable-uploads/lisa-mascot.png" 
+                  src="/lovable-uploads/440478d4-0308-4bb0-8b3b-3f6538c16e58.png" 
                   alt="Lisa contando segredos de café" 
                   className="w-full h-full object-cover"
                 />

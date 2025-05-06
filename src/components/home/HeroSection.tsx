@@ -18,7 +18,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-6">
             <span className="inline-block px-3 py-1 rounded-full bg-lisa-lavender dark:bg-lisa-dark-lavender/40 text-sm font-medium">
-              ✨ Café Temático de Gatinhos
+              {t("hero.badge")}
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold">
               {t("hero.title")}
@@ -50,7 +50,7 @@ export function HeroSection() {
                 </div>
               </div>
               <p className="text-sm text-muted-foreground">
-                <span className="font-medium">500+</span> clientes satisfeitos
+                <span className="font-medium">500+</span> {t("hero.customers")}
               </p>
             </div>
           </div>
@@ -61,7 +61,7 @@ export function HeroSection() {
             
             <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-xl animate-float">
               <img 
-                src="/lovable-uploads/lisa-mascot.png" 
+                src="/lovable-uploads/77e34000-1c92-4c67-877d-b08f50e4a2ce.png" 
                 alt="Lisa Mascote" 
                 className="w-full h-auto rounded-2xl"
               />
