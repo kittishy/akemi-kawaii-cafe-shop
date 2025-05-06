@@ -61,7 +61,7 @@ export function HeroSection() {
             
             <div className="relative bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-xl animate-float">
               <img 
-                src="/lovable-uploads/lisas-cafe-mascot.png" 
+                src="/lovable-uploads/lisa-mascot.png" 
                 alt="Lisa Mascote" 
                 className="w-full h-auto rounded-2xl"
               />

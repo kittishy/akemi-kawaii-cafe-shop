@@ -9,6 +9,10 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { CartProvider } from "@/context/CartContext";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
+import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,7 +34,7 @@ const App = () => {
         <div className="text-center">
           <div className="w-24 h-24 mx-auto mb-4 relative">
             <img 
-              src="/lovable-uploads/lisas-cafe-logo.png" 
+              src="/lovable-uploads/lisa-cafe-logo.png" 
               alt="Lisa's Cafe Loading" 
               className="w-full h-full object-contain animate-bounce opacity-70" 
             />
@@ -52,6 +56,10 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/shop" element={<Shop />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/product/:productId" element={<ProductDetail />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </BrowserRouter>

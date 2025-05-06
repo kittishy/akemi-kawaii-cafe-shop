@@ -6,7 +6,7 @@ import { useCart } from "@/context/CartContext";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { SwitchLocale } from "@/components/ui/switch-locale";
 import { Button } from "@/components/ui/button";
-import { Search, Menu, ShoppingCart, X } from "lucide-react";
+import { Search, Menu, ShoppingCart, X, Headphones } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -46,7 +46,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <img 
-              src="/lovable-uploads/lisas-cafe-logo.png" 
+              src="/lovable-uploads/lisa-cafe-logo.png" 
               alt="Lisa's Cafe" 
               className="h-12 w-auto object-contain" 
             />
@@ -67,14 +67,23 @@ export function Header() {
               {link.title}
             </Link>
           ))}
+          <a 
+            href="https://t.me/lisascafebot" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 font-medium text-accent hover:text-accent-foreground transition-colors"
+          >
+            <Headphones className="h-4 w-4" />
+            <span>Suporte</span>
+          </a>
         </nav>
 
         {/* Mobile Navigation */}
         <div className={`
-          md:hidden fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-md p-6 transition-all duration-300 ease-in-out transform shadow-lg border-r border-border
+          md:hidden fixed inset-0 top-16 z-40 bg-background border-r border-border transition-all duration-300 ease-in-out transform shadow-lg
           ${isMenuOpen ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0 pointer-events-none'}
         `}>
-          <nav className="flex flex-col gap-6">
+          <nav className="flex flex-col gap-6 p-6">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -85,6 +94,16 @@ export function Header() {
                 {link.title}
               </Link>
             ))}
+            <a 
+              href="https://t.me/lisascafebot" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 font-medium text-accent hover:text-accent-foreground transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Headphones className="h-5 w-5" />
+              <span>Suporte via Telegram</span>
+            </a>
           </nav>
         </div>
         

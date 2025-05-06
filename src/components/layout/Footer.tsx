@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import { useTheme } from "@/context/ThemeContext";
-import { Github, Twitter, Instagram, Globe, Music } from "lucide-react";
+import { Github, Twitter, Instagram, Globe, Music, MessageCircle } from "lucide-react";
 
 export function Footer() {
   const { t } = useTheme();
@@ -14,7 +14,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2">
               <img 
-                src="/lovable-uploads/lisas-cafe-logo.png" 
+                src="/lovable-uploads/lisa-cafe-logo.png" 
                 alt="Lisa's Cafe" 
                 className="h-10 w-auto object-contain" 
               />
@@ -25,28 +25,39 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               Café inspirado em gatinhos para alegrar seu dia. Produtos exclusivos com temática fofa!
             </p>
+            <div className="flex gap-2 items-center">
+              <a 
+                href="https://t.me/lisascafebot" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent-foreground transition-colors"
+              >
+                <MessageCircle className="h-4 w-4" />
+                <span>Fale conosco no Telegram</span>
+              </a>
+            </div>
           </div>
           
           <div>
             <h3 className="font-display font-medium text-lg mb-4">Produtos</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/shop/coffee" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/shop?category=coffee" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Cafés
                 </Link>
               </li>
               <li>
-                <Link to="/shop/tea" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/shop?category=tea" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Chás
                 </Link>
               </li>
               <li>
-                <Link to="/shop/milkshakes" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/shop?category=milkshake" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Milkshakes
                 </Link>
               </li>
               <li>
-                <Link to="/shop/merchandise" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link to="/shop?category=merchandise" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
                   Produtos
                 </Link>
               </li>
@@ -99,6 +110,11 @@ export function Footer() {
               </a>
             </div>
             <p className="text-xs text-muted-foreground mt-4">Discord: lisas_cafe</p>
+            <p className="text-xs text-muted-foreground mt-1">
+              <a href="https://t.me/lisascafebot" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                Suporte via Telegram: @lisascafebot
+              </a>
+            </p>
           </div>
         </div>
         
