@@ -48,6 +48,7 @@ const App = () => {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <div className="overflow-hidden w-full">
       <ThemeProvider>
         <CartProvider>
           <TooltipProvider>
@@ -67,6 +68,7 @@ const App = () => {
           </TooltipProvider>
         </CartProvider>
       </ThemeProvider>
+      </div>
     </QueryClientProvider>
   );
 };
