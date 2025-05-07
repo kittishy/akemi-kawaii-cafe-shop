@@ -81,10 +81,39 @@
   
   body {
     @apply bg-background text-foreground;
+    
+    /* Adicionando padrão de patas sutil no fundo */
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 22a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm13-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm14 7a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM28 28a3 3 0 1 0 0-6 3 3 0 0 0 0 6z' fill='currentColor' opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+    
+    /* Ajuste para suavizar transições de tema */
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
+  }
+  
+  /* Melhorando a acessibilidade para elementos focáveis */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
+  }
+  
+  /* Scrollbar estilizada */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full hover:bg-primary/70;
+  }
+  
+  /* Seleção de texto estilizada */
+  ::selection {
+    @apply bg-primary/20 text-foreground;
   }
 }
 
@@ -99,5 +128,74 @@
   
   .paw-print {
     @apply before:content-['🐾'] before:opacity-10 before:absolute before:text-2xl;
+  }
+  
+  /* Utilitário para criar elementos touch-friendly */
+  .touch-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Melhorias para animações */
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+  
+  .animate-wiggle {
+    animation: wiggle 2s ease-in-out infinite;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+  
+  .animate-fade-out {
+    animation: fade-out 0.3s ease-out;
+  }
+  
+  /* Glassmorphism para elementos flutuantes */
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/80 dark:bg-gray-800/80 border border-white/30 dark:border-gray-700/30;
+  }
+  
+  /* Estilização especial para a identidade da mascote */
+  .lisa-pattern-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.5 22a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm13-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm14 7a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM28 28a3 3 0 1 0 0-6 3 3 0 0 0 0 6z' fill='currentColor' opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  /* Efeitos de botão especiais */
+  .paw-button {
+    @apply relative overflow-hidden;
+  }
+  
+  .paw-button::after {
+    content: "🐾";
+    @apply opacity-0 absolute text-xs -bottom-3 right-1 transition-all duration-300;
+  }
+  
+  .paw-button:hover::after {
+    @apply opacity-30 -bottom-1 right-0;
+  }
+  
+  /* Transição de página */
+  .page-transition-enter {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .page-transition-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  
+  .page-transition-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .page-transition-exit-active {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 300ms, transform 300ms;
   }
 }

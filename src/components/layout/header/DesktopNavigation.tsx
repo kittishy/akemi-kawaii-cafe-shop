@@ -1,32 +1,52 @@
 
 import { Link } from "react-router-dom";
-import { Headphones } from "lucide-react";
+import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
 
 interface DesktopNavigationProps {
   navLinks: Array<{ title: string; href: string }>;
 }
 
 export function DesktopNavigation({ navLinks }: DesktopNavigationProps) {
+  const location = useLocation();
+  
   return (
-    <nav className="hidden md:flex items-center gap-6">
-      {navLinks.map((link) => (
-        <Link
-          key={link.href}
-          to={link.href}
-          className="font-medium text-muted-foreground hover:text-foreground transition-colors"
-        >
-          {link.title}
-        </Link>
-      ))}
-      <a 
-        href="https://t.me/lisascafebot" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="flex items-center gap-1 font-medium text-accent hover:text-accent-foreground transition-colors"
-      >
-        <Headphones className="h-4 w-4" />
-        <span>Suporte</span>
-      </a>
+    <nav className="hidden md:flex items-center gap-1">
+      {navLinks.map((link) => {
+        const isActive = location.pathname === link.href;
+        
+        return (
+          <Link
+            key={link.href}
+            to={link.href}
+            className="relative px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <span>{link.title}</span>
+            
+            {/* Animação de underline para o item ativo */}
+            {isActive && (
+              <motion.div
+                className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary rounded-full"
+                layoutId="activeNavIndicator"
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ duration: 0.2 }}
+              />
+            )}
+            
+            {/* Animação de hover com scaling */}
+            <motion.div
+              className="absolute -inset-1 rounded-md z-0"
+              initial={false}
+              whileHover={{ 
+                backgroundColor: "rgba(var(--primary), 0.1)",
+                scale: 1.03
+              }}
+              transition={{ duration: 0.2 }}
+            />
+          </Link>
+        );
+      })}
     </nav>
   );
 }

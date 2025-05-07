@@ -1,54 +1,102 @@
 
 import React from "react";
+import { Minus, Plus, Trash2 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Product } from "@/context/CartContext";
+import { motion } from "framer-motion";
 
 interface CartItemProps {
   product: Product;
   quantity: number;
-  updateQuantity: (productId: string, quantity: number) => void;
+  updateQuantity: (productId: string, newQuantity: number) => void;
   removeItem: (productId: string) => void;
 }
 
 export function CartItem({ product, quantity, updateQuantity, removeItem }: CartItemProps) {
+  const handleUpdateQuantity = (amount: number) => {
+    const newQuantity = quantity + amount;
+    if (newQuantity > 0) {
+      updateQuantity(product.id, newQuantity);
+      // Vibração para feedback tátil em dispositivos móveis
+      if (navigator.vibrate) {
+        navigator.vibrate(25);
+      }
+    }
+  };
+
+  const handleRemove = () => {
+    // Vibração para feedback tátil em dispositivos móveis
+    if (navigator.vibrate) {
+      navigator.vibrate([25, 50, 25]);
+    }
+    removeItem(product.id);
+  };
+
   return (
-    <div className="flex items-center gap-4 border-b py-2 group">
-      <img 
-        src={product.image}
-        alt={product.title}
-        className="w-16 h-16 object-cover rounded-md border"
-      />
+    <motion.div 
+      className="flex items-start gap-3 py-3 border-b border-border last:border-none"
+      whileHover={{ backgroundColor: "rgba(0,0,0,0.02)" }}
+    >
+      <motion.div 
+        className="w-16 h-16 rounded-xl overflow-hidden bg-muted flex-shrink-0"
+        whileHover={{ scale: 1.05 }}
+      >
+        <img 
+          src={product.image} 
+          alt={product.title}
+          className="w-full h-full object-cover"
+        />
+      </motion.div>
+      
       <div className="flex-1 min-w-0">
-        <h4 className="font-medium truncate" title={product.title}>{product.title}</h4>
-        <div className="flex items-center gap-2 mt-1">
-          <span className="text-sm text-muted-foreground">R${product.price.toFixed(2)}</span>
-          <span className="text-xs text-muted-foreground">x</span>
-          <div className="flex items-center gap-1">
-            <button
-              className="px-2 py-0.5 rounded bg-muted hover:bg-accent text-lg"
-              onClick={() => updateQuantity(product.id, quantity - 1)}
-              aria-label="Diminuir quantidade"
-            >-</button>
-            <span className="px-2 text-base font-medium">{quantity}</span>
-            <button
-              className="px-2 py-0.5 rounded bg-muted hover:bg-accent text-lg"
-              onClick={() => updateQuantity(product.id, quantity + 1)}
-              aria-label="Aumentar quantidade"
-            >+</button>
+        <div className="flex justify-between">
+          <h4 className="font-medium truncate">{product.title}</h4>
+          <motion.button
+            className="text-muted-foreground hover:text-destructive p-1 -mr-1 rounded-md"
+            onClick={handleRemove}
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ backgroundColor: "rgba(0,0,0,0.05)" }}
+          >
+            <Trash2 className="h-4 w-4" />
+            <span className="sr-only">Remover item</span>
+          </motion.button>
+        </div>
+        
+        <p className="text-sm text-muted-foreground truncate mb-2">
+          {product.description?.substring(0, 30)}...
+        </p>
+        
+        <div className="flex items-center justify-between">
+          <div className="flex items-center border rounded-full h-8 overflow-hidden">
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className="h-8 w-8 rounded-full p-0"
+              onClick={() => handleUpdateQuantity(-1)}
+              disabled={quantity <= 1}
+            >
+              <Minus className="h-3 w-3" />
+              <span className="sr-only">Reduzir quantidade</span>
+            </Button>
+            
+            <span className="w-8 text-center text-sm font-medium">{quantity}</span>
+            
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className="h-8 w-8 rounded-full p-0"
+              onClick={() => handleUpdateQuantity(1)}
+            >
+              <Plus className="h-3 w-3" />
+              <span className="sr-only">Aumentar quantidade</span>
+            </Button>
+          </div>
+          
+          <div className="font-semibold">
+            R$ {(product.price * quantity).toFixed(2)}
           </div>
         </div>
-        <span className="text-xs text-muted-foreground block mt-1">
-          Subtotal: <span className="font-semibold">R${(product.price * quantity).toFixed(2)}</span>
-        </span>
       </div>
-      <button
-        className="ml-2 text-destructive hover:text-red-700 transition-colors"
-        onClick={() => removeItem(product.id)}
-        aria-label="Remover do carrinho"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-        </svg>
-      </button>
-    </div>
+    </motion.div>
   );
 }
