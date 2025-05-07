@@ -15,15 +15,15 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-2">
               <img 
                 src="/lovable-uploads/440478d4-0308-4bb0-8b3b-3f6538c16e58.png" 
-                alt="Lisa's Café Shop" 
+                alt="Akemi Kawaii Cafe Shop" 
                 className="h-10 w-auto object-contain rounded-full border border-lisa-baby-blue/30" 
               />
               <span className="font-display font-bold text-lg text-primary">
-                Lisa's Café<span className="text-accent">Kawaii Cafe</span>
+                Akemi Kawaii <span className="text-accent">Cafe</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Seu refúgio kawaii com cafés especiais e mimos inspirados na cultura pop japonesa. Produtos exclusivos com temática fofa e encantadora!
+              Your kawaii refuge for specialty coffees and treats inspired by Japanese pop culture. Exclusive products with a cute and charming theme!
             </p>
             <div className="flex gap-2 items-center">
               <a 
@@ -33,22 +33,22 @@ export function Footer() {
                 className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent-foreground transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />
-                <span>Fale com a Lisa no Telegram</span>
+                <span>Chat with Lisa on Telegram</span>
               </a>
             </div>
           </div>
           
           <div>
-            <h3 className="font-display font-medium text-lg mb-4">Produtos</h3>
+            <h3 className="font-display font-medium text-lg mb-4">Products</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/shop?category=coffee" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Cafés
+                  Coffee
                 </Link>
               </li>
               <li>
                 <Link to="/shop?category=tea" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Chás
+                  Tea
                 </Link>
               </li>
               <li>
@@ -58,23 +58,23 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/shop?category=merchandise" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Produtos
+                  Merchandise
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-display font-medium text-lg mb-4">Empresa</h3>
+            <h3 className="font-display font-medium text-lg mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Sobre nós
+                  About us
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Contato
+                  Contact
                 </Link>
               </li>
               <li>
@@ -120,7 +120,7 @@ export function Footer() {
         
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {year} Lisa's Café Shop. {t("footer.rights")}
+            &copy; {year} Akemi Kawaii Cafe Shop – All rights reserved.
           </p>
           
           <div className="flex gap-6">

@@ -43,8 +43,8 @@ export function Header() {
 
   // Handle support button click
   const handleSupportClick = () => {
-    // Link para o servidor Discord da Lisa's Café Shop
-    window.open("https://discord.gg/convite-lisas-cafe", "_blank"); // Ellen: Substituir pelo link real do Discord.
+    // Link to Akemi Kawaii Cafe Shop Discord server
+    window.open("https://discord.gg/akemi-kawaii-cafe", "_blank"); // Ellen: Replace with the real Discord link.
     // Vibration feedback for mobile
     if (navigator.vibrate) {
       navigator.vibrate(50);
@@ -131,13 +131,8 @@ export function Header() {
             className="relative overflow-hidden"
             onClick={handleSupportClick}
           >
-            <motion.div
-              whileHover={{ rotate: [0, -10, 10, -5, 0], transition: { duration: 0.5 } }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <Headphones className="h-5 w-5" />
-            </motion.div>
-            <span className="sr-only">Suporte Lisa</span>
+            <Headphones className="h-5 w-5" />
+            <span className="sr-only">Akemi Support</span>
           </Button>
           
           <HeaderActions />
