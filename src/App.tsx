@@ -5,8 +5,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider } from "@/context/ThemeContext";
+import { ThemeProvider, useTheme } from "@/context/ThemeContext";
 import { CartProvider } from "@/context/CartContext";
+import { motion } from "framer-motion";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
 import About from "./pages/About";
@@ -28,19 +29,39 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
   
+  const { t } = useTheme();
+  
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
-          <div className="w-24 h-24 mx-auto mb-4 relative">
+          <motion.div 
+            className="w-28 h-28 mx-auto mb-6 relative"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             <img 
               src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
               alt="Akemi Kawaii Cafe Shop Loading" 
-              className="w-full h-full object-contain animate-bounce opacity-70" 
+              className="w-full h-full object-contain" 
             />
-            <div className="absolute -bottom-4 -right-4 text-2xl animate-pulse">🐾</div>
-          </div>
-          <p className="text-muted-foreground animate-pulse">Carregando...</p>
+            <motion.div 
+              className="absolute -bottom-4 -right-4 text-2xl"
+              animate={{ y: [0, -5, 0] }}
+              transition={{ repeat: Infinity, duration: 1.5 }}
+            >
+              🐾
+            </motion.div>
+          </motion.div>
+          <motion.p 
+            className="text-muted-foreground text-lg font-medium"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            {t("loading")}
+          </motion.p>
         </div>
       </div>
     );

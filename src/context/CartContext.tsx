@@ -1,6 +1,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { useTheme } from "@/context/ThemeContext";
 
 export interface Product {
   id: string;
@@ -34,6 +35,7 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [items, setItems] = useState<CartItem[]>([]);
   const { toast } = useToast();
+  const { t } = useTheme();
 
   // Load cart from localStorage
   useEffect(() => {
@@ -60,14 +62,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const newItems = [...currentItems];
         newItems[existingItemIndex].quantity += quantity;
         toast({
-          title: "Item adicionado ao carrinho",
-          description: `${product.title} quantidade atualizada para ${newItems[existingItemIndex].quantity}`,
+          title: t("cart.item.added"),
+          description: `${product.title} ${t("cart.item.updated")} ${newItems[existingItemIndex].quantity}`,
         });
         return newItems;
       } else {
         toast({
-          title: "Item adicionado ao carrinho",
-          description: `${product.title} adicionado ao carrinho`,
+          title: t("cart.item.added"),
+          description: `${product.title} ${t("cart.item.added.desc")}`,
         });
         return [...currentItems, { product, quantity }];
       }
@@ -79,8 +81,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const newItems = currentItems.filter(item => item.product.id !== productId);
       if (newItems.length < currentItems.length) {
         toast({
-          title: "Item removido",
-          description: "Item removido do carrinho",
+          title: t("cart.item.removed"),
+          description: t("cart.item.removed.desc"),
         });
       }
       return newItems;
@@ -103,8 +105,8 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const clearCart = () => {
     setItems([]);
     toast({
-      title: "Carrinho esvaziado",
-      description: "Todos os itens foram removidos do carrinho",
+      title: t("cart.cleared"),
+      description: t("cart.cleared.desc"),
     });
   };
 
