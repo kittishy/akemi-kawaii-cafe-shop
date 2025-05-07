@@ -46,7 +46,7 @@ export function Logo({ isScrolled = false }: LogoProps) {
       >
         <span className="font-display font-bold text-xl leading-tight">Akemi</span>
         <span className="text-xs text-muted-foreground leading-tight">
-          {language === "pt-BR" ? "Café & Doces" : "Café & Sweets"}
+          {language === "pt-BR" ? "Café & Doces" : "Coffee & Sweets"}
         </span>
       </motion.div>
     </Link>
