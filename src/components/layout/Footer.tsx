@@ -109,7 +109,7 @@ export function Footer() {
                 <Music className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
               </a>
             </div>
-            <p className="text-xs text-muted-foreground mt-4">Discord: lisas_cafe</p>
+            <p className="text-xs text-muted-foreground mt-4">Discord: gxth_akemi</p>
             <p className="text-xs text-muted-foreground mt-1">
               <a href="https://t.me/lisascafe_bot" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
                 Suporte via Telegram: @lisascafe_bot
