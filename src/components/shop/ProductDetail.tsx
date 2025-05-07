@@ -42,8 +42,8 @@ export function ProductDetail() {
   // Array of product images (normally would come from product data)
   const productImages = [
     product.image,
-    "/lovable-uploads/lisa-mascot.png", // additional image
-    "/lovable-uploads/lisa-full.png", // additional image
+    "/lovable-uploads/akemi-mascot.png", // additional image
+    "/lovable-uploads/akemi-full.png", // additional image
   ];
 
   const handleQuantityChange = (amount: number) => {
@@ -86,7 +86,7 @@ export function ProductDetail() {
       avatar: "/placeholder.svg",
       rating: 5,
       date: "15/02/2023",
-      comment: "Já comprei várias vezes e sempre com a mesma qualidade. A Lisa acertou na formulação!",
+      comment: "Já comprei várias vezes e sempre com a mesma qualidade. A Akemi acertou na formulação!",
     },
   ];
 
@@ -182,7 +182,7 @@ export function ProductDetail() {
               {product.description}
             </p>
             <p className="text-muted-foreground mt-2">
-              Aproveite este produto especial do Lisa's Cafe, feito com ingredientes cuidadosamente selecionados para proporcionar uma experiência única de sabor e aroma.
+              Aproveite este produto especial do Akemi Kawaii Cafe Shop, feito com ingredientes cuidadosamente selecionados para proporcionar uma experiência única de sabor e aroma.
             </p>
           </div>
 

@@ -98,7 +98,7 @@ export function FilterSidebar({
           <div className="bg-accent/20 rounded-lg p-3 text-sm">
             <p className="font-medium">20% OFF nos milkshakes!</p>
             <p className="text-muted-foreground text-xs mt-1">
-              Use o cupom: LISALOVE
+              Use o cupom: AKEMILOVE
             </p>
           </div>
         </CardContent>
