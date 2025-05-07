@@ -64,7 +64,7 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
   return (
     <motion.div 
       className={`
-        md:hidden fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-md transition-all duration-300 ease-in-out transform
+        md:hidden fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-md transition-all duration-300 ease-in-out transform overflow-hidden
         ${isOpen ? 'pointer-events-auto' : 'pointer-events-none'}
       `}
       initial="closed"
