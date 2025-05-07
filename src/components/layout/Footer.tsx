@@ -15,7 +15,7 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-2">
               <img 
                 src="/lovable-uploads/440478d4-0308-4bb0-8b3b-3f6538c16e58.png" 
-                alt="Akemi Kawaii Cafe Shop" 
+                alt="Lisa's CaféShop" 
                 className="h-10 w-auto object-contain rounded-full border border-lisa-baby-blue/30" 
               />
               <span className="font-display font-bold text-lg text-primary">
@@ -120,7 +120,7 @@ export function Footer() {
         
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {year} Akemi Kawaii Cafe Shop – All rights reserved.
+            &copy; {year} Lisa's CaféShop – All rights reserved.
           </p>
           
           <div className="flex gap-6">

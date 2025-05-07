@@ -54,7 +54,7 @@ function AppContent({ loading }: { loading: boolean }) {
           >
             <img 
               src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
-              alt="Akemi Kawaii Cafe Shop Loading" 
+              alt="Lisa's CaféShop Loading" 
               className="w-full h-full object-contain" 
             />
             <motion.div 

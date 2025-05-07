@@ -43,7 +43,7 @@ export function Header() {
 
   // Handle support button click
   const handleSupportClick = () => {
-    // Link to Akemi Kawaii Cafe Shop Discord server
+    // Link to Lisa's CaféShop Discord server
     window.open("https://discord.gg/akemi-kawaii-cafe", "_blank"); // Ellen: Replace with the real Discord link.
     // Vibration feedback for mobile
     if (navigator.vibrate) {

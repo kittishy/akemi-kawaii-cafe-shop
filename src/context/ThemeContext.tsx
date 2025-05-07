@@ -155,8 +155,8 @@ const translations = {
     "en-US": "Description"
   },
   "product.description.extra": {
-    "pt-BR": "Aproveite este produto especial do Akemi Kawaii Cafe Shop, feito com ingredientes cuidadosamente selecionados para proporcionar uma experiência única de sabor e aroma.",
-    "en-US": "Enjoy this special product from Akemi Kawaii Cafe Shop, made with carefully selected ingredients to provide a unique experience of flavor and aroma."
+    "pt-BR": "Aproveite este produto especial do Lisa's CaféShop, feito com ingredientes cuidadosamente selecionados para proporcionar uma experiência única de sabor e aroma.",
+    "en-US": "Enjoy this special product from Lisa's CaféShop, made with carefully selected ingredients to provide a unique experience of flavor and aroma."
   },
   "product.availability": {
     "pt-BR": "Disponibilidade",

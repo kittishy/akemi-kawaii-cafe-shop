@@ -67,7 +67,7 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))'
         },
-        // Paleta de Cores Akemi Kawaii Cafe Shop - Tons Pastel
+        // Paleta de Cores Lisa's CaféShop - Tons Pastel
         akemi: {
           'baby-blue': '#BAD7F2',
           'lavender': '#E2D1F9',

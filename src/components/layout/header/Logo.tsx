@@ -25,7 +25,7 @@ export function Logo({ isScrolled = false }: LogoProps) {
       >
         <img
           src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png"
-          alt="Akemi Kawaii Cafe Shop"
+          alt="Lisa's CaféShop"
           className="w-full h-full object-contain p-1"
         />
         
