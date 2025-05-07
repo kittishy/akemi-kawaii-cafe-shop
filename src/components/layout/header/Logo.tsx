@@ -10,13 +10,17 @@ export function Logo({ isScrolled = false }: LogoProps) {
   return (
     <Link to="/" className="flex items-center space-x-2">
       <motion.div 
-        className={`relative overflow-hidden ${isScrolled ? "w-10 h-10" : "w-12 h-12"}`}
+        className={`relative overflow-hidden rounded-full ${isScrolled ? "w-10 h-10" : "w-12 h-12"}`}
         initial={{ rotate: 0 }}
-        whileHover={{ rotate: [0, -5, 5, 0], transition: { duration: 0.6 } }}
+        whileHover={{ 
+          rotate: [0, -5, 5, 0], 
+          scale: 1.05,
+          transition: { duration: 0.6 } 
+        }}
         transition={{ duration: 0.2 }}
       >
         <img
-          src="/lovable-uploads/lisa-cafe-logo.png"
+          src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png"
           alt="Lisa's Cafe"
           className="w-full h-full object-contain"
         />
