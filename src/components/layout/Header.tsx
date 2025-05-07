@@ -43,8 +43,8 @@ export function Header() {
 
   // Handle support button click
   const handleSupportClick = () => {
-    // Placeholder for support channel link
-    window.open("https://discord.com/support", "_blank");
+    // Link para o servidor Discord da Akemi Kawaii Cafe Shop
+    window.open("https://discord.gg/convite-akemi-kawaii-cafe", "_blank"); // Ellen: Substituir pelo link real do Discord.
     // Vibration feedback for mobile
     if (navigator.vibrate) {
       navigator.vibrate(50);
@@ -137,7 +137,7 @@ export function Header() {
             >
               <Headphones className="h-5 w-5" />
             </motion.div>
-            <span className="sr-only">Suporte</span>
+            <span className="sr-only">Suporte Akemi</span>
           </Button>
           
           <HeaderActions />

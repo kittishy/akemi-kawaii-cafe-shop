@@ -15,25 +15,25 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-2">
               <img 
                 src="/lovable-uploads/440478d4-0308-4bb0-8b3b-3f6538c16e58.png" 
-                alt="Lisa's Cafe" 
+                alt="Akemi Kawaii Cafe Shop" 
                 className="h-10 w-auto object-contain rounded-full border border-lisa-baby-blue/30" 
               />
               <span className="font-display font-bold text-lg text-primary">
-                Lisa's<span className="text-accent">Cafe</span>
+                Akemi<span className="text-accent">Kawaii Cafe</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Café inspirado em gatinhos para alegrar seu dia. Produtos exclusivos com temática fofa!
+              Seu refúgio kawaii com cafés especiais e mimos inspirados na cultura pop japonesa. Produtos exclusivos com temática fofa e encantadora!
             </p>
             <div className="flex gap-2 items-center">
               <a 
-                href="https://t.me/lisascafebot" 
+                href="https://t.me/akemikawaiicafe_bot" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent-foreground transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />
-                <span>Fale conosco no Telegram</span>
+                <span>Fale com a Akemi no Telegram</span>
               </a>
             </div>
           </div>
@@ -109,10 +109,10 @@ export function Footer() {
                 <Music className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
               </a>
             </div>
-            <p className="text-xs text-muted-foreground mt-4">Discord: lisas_cafe</p>
+            <p className="text-xs text-muted-foreground mt-4">Discord: akemi_kawaii_cafe</p>
             <p className="text-xs text-muted-foreground mt-1">
-              <a href="https://t.me/lisascafebot" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                Suporte via Telegram: @lisascafebot
+              <a href="https://t.me/akemikawaiicafe_bot" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                Suporte via Telegram: @akemikawaiicafe_bot
               </a>
             </p>
           </div>
@@ -120,7 +120,7 @@ export function Footer() {
         
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {year} Lisa's Cafe. {t("footer.rights")}
+            &copy; {year} Akemi Kawaii Cafe Shop. {t("footer.rights")}
           </p>
           
           <div className="flex gap-6">

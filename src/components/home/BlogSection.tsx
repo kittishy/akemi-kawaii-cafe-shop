@@ -12,7 +12,7 @@ const blogPosts = [
     image: "/placeholder.svg",
     date: "2023-12-15",
     category: "Café",
-    author: "Lisa"
+    author: "Akemi"
   },
   {
     id: "2",
@@ -21,7 +21,7 @@ const blogPosts = [
     image: "/placeholder.svg",
     date: "2023-12-05",
     category: "Tutoriais",
-    author: "Lisa"
+    author: "Akemi"
   },
   {
     id: "3",
@@ -30,7 +30,7 @@ const blogPosts = [
     image: "/placeholder.svg",
     date: "2023-11-20",
     category: "Cultura",
-    author: "Lisa"
+    author: "Akemi"
   }
 ];
 
@@ -39,7 +39,7 @@ export function BlogSection() {
     <section className="py-16 bg-background">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-display text-3xl font-bold">Blog da Lisa</h2>
+          <h2 class="font-display text-3xl font-bold">Blog da Akemi</h2>
           <p className="text-muted-foreground mt-2">Conteúdo sobre café, gatos e muito mais</p>
         </div>
         

@@ -1,12 +1,12 @@
-# Documentação: Lisa's Cafe E-Commerce
+# Documentação Técnica: Akemi Kawaii Cafe Shop
 
 ## Visão Geral do Projeto
 
-Lisa's Cafe é um e-commerce temático de cafés especiais com inspiração no universo de gatinhos em estilo anime. O mascote do projeto é a Lisa, uma gatinha que representa a identidade visual da marca. A interface do site utiliza uma estética “fofa e pastel”, com destaque para tons suaves de azul bebê, lavanda, branco, pêssego e cinza.
+Akemi Kawaii Cafe Shop é um e-commerce temático de cafés especiais com inspiração no universo kawaii e na cultura pop japonesa, com foco em gatinhos em estilo anime. A mascote do projeto é Akemi, uma gatinha que personifica a identidade visual da marca. A interface do site utiliza uma estética “fofa e pastel”, com destaque para tons suaves de azul bebê, lavanda, branco, pêssego e cinza, buscando criar uma experiência de compra encantadora e memorável.
 
 ## Identidade Visual
 
-* **Mascote**: Lisa, uma gatinha em estilo anime que aparece em ilustrações e ícones do site.
+* **Mascote**: Akemi, uma gatinha em estilo anime que aparece em ilustrações e ícones do site, representando o espírito "kawaii" do café.
 * **Paleta de Cores**:
 
   * Azul bebê (#BAD7F2)
@@ -119,14 +119,16 @@ Compatível com desktops, tablets e smartphones. Componentes adaptativos garante
 ### Exemplo de Classes Customizadas com Tailwind
 
 ```css
-.cat-card {
+.akemi-card {
   @apply rounded-3xl bg-white p-5 shadow-md dark:bg-gray-800 transition-all hover:shadow-lg border border-akemi-baby-blue/30 dark:border-akemi-dark-blue/30;
 }
 
-.cat-button {
+.akemi-button {
   @apply px-5 py-2 rounded-full bg-akemi-baby-blue text-white font-medium shadow-md hover:bg-akemi-dark-blue transition-all dark:bg-akemi-dark-blue dark:hover:bg-akemi-baby-blue;
 }
 ```
+
+**Nota de Ellen:** As classes CSS foram renomeadas de `cat-card` e `cat-button` para `akemi-card` e `akemi-button` para melhor alinhamento com a identidade da marca "Akemi" e para evitar generalidade excessiva. Isso promove clareza e consistência no código.
 
 ## Design Emocional
 
@@ -219,4 +221,4 @@ Projetado para facilitar a evolução do sistema:
 
 ---
 
-© 2025 Lisa's Cafe – Todos os direitos reservados.
+© 2024 Akemi Kawaii Cafe Shop – Todos os direitos reservados.

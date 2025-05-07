@@ -21,7 +21,7 @@ export function Logo({ isScrolled = false }: LogoProps) {
       >
         <img
           src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png"
-          alt="Lisa's Cafe"
+          alt="Akemi Kawaii Cafe Shop"
           className="w-full h-full object-contain"
         />
         
@@ -40,7 +40,7 @@ export function Logo({ isScrolled = false }: LogoProps) {
         animate={{ opacity: isScrolled ? 0.9 : 1, scale: isScrolled ? 0.95 : 1 }}
         transition={{ duration: 0.2 }}
       >
-        <span className="font-display font-bold text-xl">Lisa's Cafe</span>
+        <span className="font-display font-bold text-xl">Akemi Cafe</span>
       </motion.div>
     </Link>
   );

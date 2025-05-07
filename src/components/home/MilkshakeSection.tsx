@@ -19,7 +19,7 @@ export function MilkshakeSection() {
   };
   
   return (
-    <section className="py-16 bg-lisa-soft-gray dark:bg-gray-900">
+    <section className="py-16 bg-akemi-soft-gray dark:bg-gray-900">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="font-display text-3xl font-bold">Milkshakes Especiais</h2>

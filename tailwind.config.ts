@@ -67,18 +67,7 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))'
         },
-        // Tema Lisa's Cafe - Paleta Pastel
-        lisa: {
-          'baby-blue': '#BAD7F2',
-          'lavender': '#E2D1F9',
-          'soft-gray': '#F0F0F0',
-          'cream': '#FFF6E9',
-          'peach': '#FFE5D9',
-          'dark-blue': '#6B9AC4',
-          'dark-lavender': '#A388B8',
-          'dark-gray': '#525252',
-        },
-        // Mantendo compatibilidade com código existente
+        // Paleta de Cores Akemi Kawaii Cafe Shop - Tons Pastel
         akemi: {
           'baby-blue': '#BAD7F2',
           'lavender': '#E2D1F9',
@@ -130,7 +119,7 @@ export default {
         "fade-out": "fade-out 0.3s ease-out",
       },
       backgroundImage: {
-        'cat-paw-pattern': "url('/cat-paw-pattern.svg')",
+        'akemi-paw-pattern': "url('/akemi-paw-pattern.svg')", // Ellen: Renomeado para consistência com a marca.
       }
     },
   },
