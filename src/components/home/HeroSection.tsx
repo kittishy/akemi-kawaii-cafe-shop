@@ -35,7 +35,7 @@ export function HeroSection() {
   return (
     <section className="relative overflow-hidden">
       {/* Background com efeito de onda */}
-      <div className="absolute inset-0 bg-gradient-to-br from-akemi-cream via-white to-akemi-baby-blue/20 dark:from-akemi-dark-blue/30 dark:via-gray-900 dark:to-gray-900 -z-10">
+      <div className="absolute inset-0 bg-gradient-to-br from-lisa-cream via-white to-lisa-baby-blue/20 dark:from-lisa-dark-blue/30 dark:via-gray-900 dark:to-gray-900 -z-10">
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-background" 
              style={{ clipPath: "ellipse(70% 100% at 50% 100%)" }}></div>
         
@@ -58,7 +58,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
           <div className="space-y-6">
             <motion.div variants={itemVariants}>
-              <span className="inline-block px-4 py-1.5 rounded-full bg-akemi-lavender dark:bg-akemi-dark-lavender/40 text-sm font-medium mb-3">
+              <span className="inline-block px-4 py-1.5 rounded-full bg-lisa-lavender dark:bg-lisa-dark-lavender/40 text-sm font-medium mb-3">
                 <div className="flex items-center gap-2">
                   <Coffee className="h-4 w-4" />
                   <span>{t("hero.badge")}</span>
@@ -109,7 +109,7 @@ export function HeroSection() {
               <Button asChild variant="outline" size="lg" className="rounded-full px-8 h-12 text-base">
                 <Link to="/about">
                   <Coffee className="h-5 w-5 mr-2" />
-                  Conheça a Akemi
+                  Conheça a Lisa
                 </Link>
               </Button>
             </motion.div>
@@ -180,7 +180,7 @@ export function HeroSection() {
             >
               <img 
                 src="/lovable-uploads/77e34000-1c92-4c67-877d-b08f50e4a2ce.png" 
-                alt="Akemi Mascote" 
+                alt="Lisa Mascote" 
                 className="w-full h-auto rounded-2xl"
               />
               

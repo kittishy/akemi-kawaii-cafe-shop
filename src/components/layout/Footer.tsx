@@ -15,11 +15,11 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-2">
               <img 
                 src="/lovable-uploads/440478d4-0308-4bb0-8b3b-3f6538c16e58.png" 
-                alt="Akemi Kawaii Cafe Shop" 
+                alt="Lisa's Café Shop" 
                 className="h-10 w-auto object-contain rounded-full border border-lisa-baby-blue/30" 
               />
               <span className="font-display font-bold text-lg text-primary">
-                Akemi<span className="text-accent">Kawaii Cafe</span>
+                Lisa's Café<span className="text-accent">Kawaii Cafe</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
@@ -33,7 +33,7 @@ export function Footer() {
                 className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent-foreground transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />
-                <span>Fale com a Akemi no Telegram</span>
+                <span>Fale com a Lisa no Telegram</span>
               </a>
             </div>
           </div>
@@ -109,10 +109,10 @@ export function Footer() {
                 <Music className="h-5 w-5 text-muted-foreground hover:text-foreground transition-colors" />
               </a>
             </div>
-            <p className="text-xs text-muted-foreground mt-4">Discord: akemi_kawaii_cafe</p>
+            <p className="text-xs text-muted-foreground mt-4">Discord: lisas_cafe</p>
             <p className="text-xs text-muted-foreground mt-1">
-              <a href="https://t.me/akemikawaiicafe_bot" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                Suporte via Telegram: @akemikawaiicafe_bot
+              <a href="https://t.me/lisascafe_bot" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                Suporte via Telegram: @lisascafe_bot
               </a>
             </p>
           </div>
@@ -120,7 +120,7 @@ export function Footer() {
         
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {year} Akemi Kawaii Cafe Shop. {t("footer.rights")}
+            &copy; {year} Lisa's Café Shop. {t("footer.rights")}
           </p>
           
           <div className="flex gap-6">
