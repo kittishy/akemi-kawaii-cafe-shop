@@ -28,9 +28,20 @@ const App = () => {
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
-  
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <div className="overflow-hidden w-full">
+      <ThemeProvider>
+        <AppContent loading={loading} />
+      </ThemeProvider>
+      </div>
+    </QueryClientProvider>
+  );
+};
+
+function AppContent({ loading }: { loading: boolean }) {
   const { t } = useTheme();
-  
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
@@ -66,32 +77,25 @@ const App = () => {
       </div>
     );
   }
-
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="overflow-hidden w-full">
-      <ThemeProvider>
-        <CartProvider>
-          <TooltipProvider>
-            <Toaster />
-            <Sonner />
-            <BrowserRouter>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/shop" element={<Shop />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path="/product/:productId" element={<ProductDetail />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </BrowserRouter>
-          </TooltipProvider>
-        </CartProvider>
-      </ThemeProvider>
-      </div>
-    </QueryClientProvider>
+    <CartProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/product/:productId" element={<ProductDetail />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </CartProvider>
   );
-};
+}
 
 export default App;
