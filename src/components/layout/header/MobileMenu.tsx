@@ -71,7 +71,7 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
       animate={isOpen ? "open" : "closed"}
       variants={containerVariants}
     >
-      <div className="relative h-full w-full overflow-hidden">
+      <div className="relative h-full w-full overflow-x-hidden">
         {/* Elementos decorativos */}
         <div className="absolute top-12 left-4 w-24 h-24 rounded-full bg-primary/10 blur-xl"></div>
         <div className="absolute bottom-24 right-8 w-32 h-32 rounded-full bg-accent/10 blur-xl"></div>
