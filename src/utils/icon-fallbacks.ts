@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Fallback icon components
 export const FaTwitter = () => <span className="font-bold">T</span>;
 export const FaFacebook = () => <span className="font-bold">F</span>;
