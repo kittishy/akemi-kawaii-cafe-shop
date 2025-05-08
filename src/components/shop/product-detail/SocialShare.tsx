@@ -1,4 +1,6 @@
 import React from 'react';
+// Import fallbacks instead of react-icons
+import { FaTwitter, FaFacebook, FaWhatsapp, FaLink } from '../../../utils/icon-fallbacks';
 
 interface SocialShareProps {
   url?: string;
@@ -19,21 +21,21 @@ const SocialShare: React.FC<SocialShareProps> = ({
         className="p-2 bg-blue-400 text-white rounded-full hover:bg-opacity-80"
         aria-label="Share on Twitter"
       >
-        <span className="font-bold">X</span>
+        <FaTwitter />
       </button>
       <button
         onClick={() => window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`, '_blank')}
         className="p-2 bg-blue-600 text-white rounded-full hover:bg-opacity-80"
         aria-label="Share on Facebook"
       >
-        <span className="font-bold">F</span>
+        <FaFacebook />
       </button>
       <button
         onClick={() => window.open(`https://api.whatsapp.com/send?text=${encodedTitle} ${encodedUrl}`, '_blank')}
         className="p-2 bg-green-500 text-white rounded-full hover:bg-opacity-80"
         aria-label="Share on WhatsApp"
       >
-        <span className="font-bold">W</span>
+        <FaWhatsapp />
       </button>
       <button
         onClick={() => {
@@ -43,7 +45,7 @@ const SocialShare: React.FC<SocialShareProps> = ({
         className="p-2 bg-gray-500 text-white rounded-full hover:bg-opacity-80"
         aria-label="Copy link"
       >
-        <span className="font-bold">C</span>
+        <FaLink />
       </button>
     </div>
   );
