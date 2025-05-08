@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Product } from "@/data/products";
+import { Product } from "@/context/CartContext";
 import { useTheme } from "@/context/ThemeContext";
 
 interface RelatedProductsProps {

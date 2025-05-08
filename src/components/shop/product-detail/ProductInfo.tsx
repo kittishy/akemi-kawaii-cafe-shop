@@ -1,10 +1,9 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Minus, Plus, ShoppingCart, Heart, Star } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Product } from "@/data/products";
+import { Product } from "@/context/CartContext";
 import { useTheme } from "@/context/ThemeContext";
 
 interface ProductInfoProps {
