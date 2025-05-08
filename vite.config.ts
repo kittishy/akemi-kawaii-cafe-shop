@@ -5,15 +5,15 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
     build: {
-    rollupOptions: {
-      external: [
-        'react-icons/fa'
-      ]
+      rollupOptions: {
+        input: [
+          'react-icons/fa'
+        ]
       }
   },
   resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src')
-    }
+        alias: {
+            '@': path.resolve(__dirname, './src')
+        }
   }
 });
