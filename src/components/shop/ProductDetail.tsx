@@ -9,14 +9,28 @@ import { ProductInfo } from "./product-detail/ProductInfo";
 import { ProductReviews } from "./product-detail/ProductReviews";
 import { RelatedProducts } from "./product-detail/RelatedProducts";
 import { ProductBreadcrumb } from "./product-detail/ProductBreadcrumb";
+import { useState, useEffect } from "react";
+import { ProductInfoSkeleton } from "./product-detail/ProductInfoSkeleton";
+import { Skeleton } from "@/components/ui/skeleton";
 
 export function ProductDetail() {
   const { productId } = useParams();
   const { addItem } = useCart();
   const { t } = useTheme();
+  const [isLoading, setIsLoading] = useState(true);
 
   // Find the product with the matching ID
   const product = products.find((p) => p.id === productId);
+  
+  // Simular carregamento para demonstrar o skeleton
+  useEffect(() => {
+    // Simular um tempo de carregamento para demonstrar o skeleton
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    
+    return () => clearTimeout(timer);
+  }, [productId]);
 
   // If product not found, display an error
   if (!product) {
@@ -85,10 +99,21 @@ export function ProductDetail() {
       {/* Product detail */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
         {/* Product images carousel */}
-        <ProductImages images={productImages} title={product.title} />
+        {isLoading ? (
+          <div className="aspect-square rounded-xl overflow-hidden">
+            <Skeleton className="w-full h-full" />
+          </div>
+        ) : (
+          <ProductImages images={productImages} title={product.title} />
+        )}
 
         {/* Product information */}
-        <ProductInfo product={product} onAddToCart={handleAddToCart} />
+        <ProductInfo 
+          product={product} 
+          onAddToCart={handleAddToCart} 
+          isLoading={isLoading}
+          allProducts={products}
+        />
       </div>
 
       {/* Product reviews */}
