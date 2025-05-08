@@ -5,7 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider, useTheme } from "@/context/ThemeContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { CartProvider } from "@/context/CartContext";
 import { motion } from "framer-motion";
 import Index from "./pages/Index";
@@ -19,6 +19,18 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <div className="overflow-hidden w-full">
+        <ThemeProvider>
+          <AppContent />
+        </ThemeProvider>
+      </div>
+    </QueryClientProvider>
+  );
+};
+
+function AppContent() {
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
@@ -29,20 +41,8 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  return (
-    <QueryClientProvider client={queryClient}>
-      <div className="overflow-hidden w-full">
-      <ThemeProvider>
-        <AppContent loading={loading} />
-      </ThemeProvider>
-      </div>
-    </QueryClientProvider>
-  );
-};
-
-function AppContent({ loading }: { loading: boolean }) {
-  const { t } = useTheme();
   if (loading) {
+    // Loading state doesn't need to use the useTheme hook directly
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
@@ -71,12 +71,13 @@ function AppContent({ loading }: { loading: boolean }) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            {t("loading")}
+            Carregando...
           </motion.p>
         </div>
       </div>
     );
   }
+  
   return (
     <CartProvider>
       <TooltipProvider>

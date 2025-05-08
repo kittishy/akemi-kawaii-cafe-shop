@@ -51,5 +51,4 @@ export function Logo({ isScrolled = false }: LogoProps) {
       </motion.div>
     </Link>
   );
-
 }
