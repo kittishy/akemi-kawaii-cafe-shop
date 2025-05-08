@@ -20,7 +20,7 @@ import { motion } from "framer-motion";
 export function ProductDetail() {
   const { productId } = useParams();
   const { addItem } = useCart();
-  const { t } = useTheme();
+  const { t, language } = useTheme();
   const [quantity, setQuantity] = useState(1);
   const [isLiked, setIsLiked] = useState(false);
 
