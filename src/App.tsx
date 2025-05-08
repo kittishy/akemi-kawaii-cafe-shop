@@ -7,7 +7,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { CartProvider } from "@/context/CartContext";
-import { FavoritesProvider } from "@/context/FavoritesContext";
 import { motion } from "framer-motion";
 import Index from "./pages/Index";
 import Shop from "./pages/Shop";
@@ -81,12 +80,11 @@ function AppContent() {
   
   return (
     <CartProvider>
-      <FavoritesProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner position="top-right" richColors closeButton />
-          <BrowserRouter>
-            <Routes>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/shop" element={<Shop />} />
             <Route path="/about" element={<About />} />
@@ -94,10 +92,9 @@ function AppContent() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/product/:productId" element={<ProductDetail />} />
             <Route path="*" element={<NotFound />} />
-            </Routes>
-          </BrowserRouter>
-        </TooltipProvider>
-      </FavoritesProvider>
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
     </CartProvider>
   );
 }

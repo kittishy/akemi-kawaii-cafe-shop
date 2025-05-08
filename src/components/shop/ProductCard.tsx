@@ -7,16 +7,16 @@ import { Badge } from "@/components/ui/badge";
 import { Heart, ShoppingCart, Eye } from "lucide-react";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Product, useCart } from "@/context/CartContext";
-import { useFavorites } from "@/context/FavoritesContext";
 import { motion } from "framer-motion";
 
 interface ProductCardProps {
   product: Product;
+  likedProducts: Record<string, boolean>;
+  onToggleLike: (productId: string) => void;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, likedProducts, onToggleLike }: ProductCardProps) {
   const { addItem } = useCart();
-  const { toggleFavorite, isFavorite } = useFavorites();
   const [imageLoaded, setImageLoaded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   
@@ -67,16 +67,16 @@ export function ProductCard({ product }: ProductCardProps) {
               if (navigator.vibrate) {
                 navigator.vibrate(50);
               }
-              toggleFavorite(product.id);
+              onToggleLike(product.id);
             }}
             whileTap={{ scale: 0.9 }}
           >
             <Heart 
-              className={`h-5 w-5 transition-colors duration-300 ${isFavorite(product.id) ? "fill-red-500 text-red-500" : "text-muted-foreground"}`} 
+              className={`h-5 w-5 transition-colors duration-300 ${likedProducts[product.id] ? "fill-red-500 text-red-500" : "text-muted-foreground"}`} 
             />
             
             {/* Animação quando o usuário curte um produto */}
-            {isFavorite(product.id) && (
+            {likedProducts[product.id] && (
               <motion.div
                 initial={{ scale: 0, opacity: 1 }}
                 animate={{ scale: 1.5, opacity: 0 }}
