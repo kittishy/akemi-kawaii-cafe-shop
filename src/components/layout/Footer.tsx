@@ -23,7 +23,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Seu refúgio para cafés especiais e guloseimas inspiradas pela cultura pop japonesa. Produtos exclusivos com um tema fofo e encantador!
+              {t("footer.description")}
             </p>
             <div className="flex gap-2 items-center">
               <a 
@@ -33,58 +33,58 @@ export function Footer() {
                 className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent-foreground transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />
-                <span>Converse com a Lisa no Telegram</span>
+                <span>{t("footer.telegram.chat")}</span>
               </a>
             </div>
           </div>
           
           <div>
-            <h3 className="font-display font-medium text-lg mb-4">Products</h3>
+            <h3 className="font-display font-medium text-lg mb-4">{t("footer.products")}</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/shop?category=coffee" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Coffee
+                  {t("products.category.coffee")}
                 </Link>
               </li>
               <li>
                 <Link to="/shop?category=tea" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Tea
+                  {t("products.category.tea")}
                 </Link>
               </li>
               <li>
                 <Link to="/shop?category=milkshake" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Milkshakes
+                  {t("products.category.milkshake")}
                 </Link>
               </li>
               <li>
                 <Link to="/shop?category=merchandise" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Merchandise
+                  {t("products.category.merchandise")}
                 </Link>
               </li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-display font-medium text-lg mb-4">Company</h3>
+            <h3 className="font-display font-medium text-lg mb-4">{t("footer.company")}</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  About us
+                  {t("footer.about")}
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
+                  {t("nav.contact")}
                 </Link>
               </li>
               <li>
                 <Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  Blog
+                  {t("nav.blog")}
                 </Link>
               </li>
               <li>
                 <Link to="/faq" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-                  FAQ
+                  {t("footer.faq")}
                 </Link>
               </li>
             </ul>
@@ -112,7 +112,7 @@ export function Footer() {
             <p className="text-xs text-muted-foreground mt-4">Discord: gxth_akemi</p>
             <p className="text-xs text-muted-foreground mt-1">
               <a href="https://t.me/lisascafe_bot" target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
-                Suporte via Telegram: @lisascafe_bot
+                {t("footer.telegram.support")}
               </a>
             </p>
           </div>
@@ -125,10 +125,10 @@ export function Footer() {
           
           <div className="flex gap-6">
             <Link to="/privacy-policy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Política de Privacidade
+              {t("footer.privacy")}
             </Link>
             <Link to="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
-              Termos de Uso
+              {t("footer.terms")}
             </Link>
           </div>
         </div>

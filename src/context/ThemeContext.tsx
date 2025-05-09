@@ -110,6 +110,18 @@ const translations = {
     "pt-BR": "clientes satisfeitos",
     "en-US": "satisfied customers"
   },
+  "hero.welcome": {
+    "pt-BR": "Bem-vindo ao Lisa's Café!",
+    "en-US": "Welcome to Lisa's Café!"
+  },
+  "hero.free.delivery": {
+    "pt-BR": "Entrega grátis",
+    "en-US": "Free delivery"
+  },
+  "hero.scroll": {
+    "pt-BR": "Role para ver mais",
+    "en-US": "Scroll to see more"
+  },
   
   // Produtos
   "products.trending": {
@@ -135,6 +147,64 @@ const translations = {
   "products.category.products": {
     "pt-BR": "Produtos",
     "en-US": "Products"
+  },
+  "products.category.merchandise": {
+    "pt-BR": "Produtos",
+    "en-US": "Merchandise"
+  },
+  "products.view.more": {
+    "pt-BR": "Ver mais produtos",
+    "en-US": "View more products"
+  },
+  "products.add": {
+    "pt-BR": "Adicionar",
+    "en-US": "Add"
+  },
+  
+  // Footer
+  "footer.products": {
+    "pt-BR": "Produtos",
+    "en-US": "Products"
+  },
+  "footer.company": {
+    "pt-BR": "Empresa",
+    "en-US": "Company"
+  },
+  "footer.about": {
+    "pt-BR": "Sobre nós",
+    "en-US": "About us"
+  },
+  "footer.faq": {
+    "pt-BR": "Perguntas Frequentes",
+    "en-US": "FAQ"
+  },
+  "footer.privacy": {
+    "pt-BR": "Política de Privacidade",
+    "en-US": "Privacy Policy"
+  },
+  "footer.terms": {
+    "pt-BR": "Termos de Uso",
+    "en-US": "Terms of Use"
+  },
+  "footer.rights": {
+    "pt-BR": "Todos os direitos reservados",
+    "en-US": "All rights reserved"
+  },
+  "footer.follow": {
+    "pt-BR": "Siga-nos",
+    "en-US": "Follow us"
+  },
+  "footer.telegram.support": {
+    "pt-BR": "Suporte via Telegram: @lisascafe_bot",
+    "en-US": "Telegram support: @lisascafe_bot"
+  },
+  "footer.telegram.chat": {
+    "pt-BR": "Converse com a Lisa no Telegram",
+    "en-US": "Chat with Lisa on Telegram"
+  },
+  "footer.description": {
+    "pt-BR": "Seu refúgio para cafés especiais e guloseimas inspiradas pela cultura pop japonesa. Produtos exclusivos com um tema fofo e encantador!",
+    "en-US": "Your refuge for special coffees and treats inspired by Japanese pop culture. Exclusive products with a cute and charming theme!"
   },
   
   // Detalhes do Produto
@@ -190,15 +260,65 @@ const translations = {
     "pt-BR": "Produtos Relacionados",
     "en-US": "Related Products"
   },
-  
-  // Footer
-  "footer.rights": {
-    "pt-BR": "Todos os direitos reservados",
-    "en-US": "All rights reserved"
+  "product.ratings": {
+    "pt-BR": "avaliações",
+    "en-US": "reviews"
   },
-  "footer.follow": {
-    "pt-BR": "Siga-nos",
-    "en-US": "Follow us"
+  "product.stars": {
+    "pt-BR": "estrelas",
+    "en-US": "stars"
+  },
+  "product.based.on": {
+    "pt-BR": "Baseado em",
+    "en-US": "Based on"
+  },
+  "product.rate": {
+    "pt-BR": "Avaliar este produto",
+    "en-US": "Rate this product"
+  },
+  
+  // Milkshakes Section
+  "milkshakes.title": {
+    "pt-BR": "Milkshakes Especiais",
+    "en-US": "Special Milkshakes"
+  },
+  "milkshakes.description": {
+    "pt-BR": "Feitos com muito carinho e decorações fofas",
+    "en-US": "Made with love and cute decorations"
+  },
+  "milkshakes.buy": {
+    "pt-BR": "Comprar agora",
+    "en-US": "Buy now"
+  },
+  "milkshakes.likes": {
+    "pt-BR": "likes",
+    "en-US": "likes"
+  },
+  
+  // Blog Section
+  "blog.description": {
+    "pt-BR": "Descubra dicas, receitas e curiosidades sobre o mundo do café",
+    "en-US": "Discover tips, recipes and curiosities about the coffee world"
+  },
+  "blog.view.all": {
+    "pt-BR": "Ver todos os artigos",
+    "en-US": "View all articles"
+  },
+  
+  // Support
+  "support.telegram": {
+    "pt-BR": "Suporte via Telegram",
+    "en-US": "Telegram Support"
+  },
+  
+  // Shop
+  "shop.title": {
+    "pt-BR": "Nossa Loja de Café",
+    "en-US": "Our Coffee Shop"
+  },
+  "shop.description": {
+    "pt-BR": "Explore nossa coleção de cafés e produtos especiais inspirados em gatinhos",
+    "en-US": "Explore our collection of coffee and special cat-inspired products"
   },
   
   // Loading

@@ -32,6 +32,7 @@ const App = () => {
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
+  const { t } = useTheme();
   
   useEffect(() => {
     // Simulating app loading
@@ -42,7 +43,6 @@ function AppContent() {
   }, []);
 
   if (loading) {
-    // Loading state doesn't need to use the useTheme hook directly
     return (
       <div className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center">
@@ -71,7 +71,7 @@ function AppContent() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            Carregando...
+            {t("loading")}
           </motion.p>
         </div>
       </div>

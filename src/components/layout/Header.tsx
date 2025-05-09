@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Headphones } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { Logo } from "./header/Logo";
 import { DesktopNavigation } from "./header/DesktopNavigation";
 import { MobileMenu } from "./header/MobileMenu";
@@ -131,7 +131,7 @@ export function Header() {
             className="relative overflow-hidden"
             onClick={handleSupportClick}
           >
-            <Headphones className="h-5 w-5" />
+            <MessageCircle className="h-5 w-5" />
             <span className="sr-only">Lisa's Support</span>
           </Button>
           

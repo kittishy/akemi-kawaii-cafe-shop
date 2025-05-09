@@ -29,6 +29,8 @@ const getNavIcon = (href: string) => {
 };
 
 export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
+  const { t } = useTheme();
+  
   // Variantes de animação para o container
   const containerVariants = {
     closed: {
@@ -144,7 +146,7 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/20 text-accent-foreground">
                 <HeadphonesIcon className="h-5 w-5" />
               </span>
-              <span>Suporte via Telegram</span>
+              <span>{t("support.telegram")}</span>
             </a>
           </motion.div>
         </nav>

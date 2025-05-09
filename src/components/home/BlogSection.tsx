@@ -2,12 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/context/ThemeContext";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
 import { BlogPostCard } from "./blog/BlogPostCard";
 import { blogPosts } from "@/data/blog-posts";
 
 export function BlogSection() {
-  const { language, t } = useTheme();
+  const { t } = useTheme();
   
   return (
     <section className="py-20 bg-secondary/30">
@@ -29,9 +28,7 @@ export function BlogSection() {
             transition={{ duration: 0.7, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {language === "pt-BR" 
-              ? "Descubra dicas, receitas e curiosidades sobre o mundo do café" 
-              : "Discover tips, recipes and curiosities about the coffee world"}
+            {t("blog.description")}
           </motion.p>
         </div>
         
@@ -43,7 +40,7 @@ export function BlogSection() {
         
         <div className="text-center mt-12">
           <Button size="lg" variant="outline" className="rounded-full">
-            {language === "pt-BR" ? "Ver todos os artigos" : "View all articles"}
+            {t("blog.view.all")}
           </Button>
         </div>
       </div>

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Minus, Plus, ShoppingCart, Heart, Star } from "lucide-react";
@@ -53,7 +54,7 @@ export function ProductInfo({ product, onAddToCart }: ProductInfoProps) {
             ))}
           </div>
           <span className="text-sm text-muted-foreground">
-            {product.rating} ({product.likes} {language === "pt-BR" ? "avaliações" : "reviews"})
+            {product.rating} ({product.likes} {t("product.ratings")})
           </span>
         </div>
       </div>

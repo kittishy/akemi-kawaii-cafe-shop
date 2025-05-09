@@ -11,7 +11,7 @@ import { featuredProducts } from "@/data/products";
 import { Skeleton } from "@/components/ui/skeleton";
 
 export function FeaturedProducts() {
-  const { t } = useTheme();
+  const { t, language } = useTheme();
   const { addItem } = useCart();
   const [likedProducts, setLikedProducts] = useState<Record<string, boolean>>({});
   const [loadingImages, setLoadingImages] = useState<Record<string, boolean>>({});
@@ -43,7 +43,7 @@ export function FeaturedProducts() {
             <Card key={product.id} className="overflow-hidden group hover:shadow-lg transition-all">
               <div className="aspect-square relative">
                 <Badge variant="secondary" className="absolute top-2 left-2 z-10">
-                  {product.category === "coffee" ? "Café" : "Milkshake"}
+                  {t(`products.category.${product.category}`)}
                 </Badge>
                 <Button
                   variant="ghost"
@@ -68,16 +68,20 @@ export function FeaturedProducts() {
               <CardContent className="p-4 space-y-2">
                 <div className="flex justify-between">
                   <h3 className="font-medium">{product.title}</h3>
-                  <span className="font-bold">R$ {product.price.toFixed(2)}</span>
+                  <span className="font-bold">
+                    {language === "pt-BR" ? "R$" : "$"} {product.price.toFixed(2)}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-1">
                     <span className="text-yellow-500">★</span>
-                    <span className="text-sm text-muted-foreground">{product.rating} ({product.likes} likes)</span>
+                    <span className="text-sm text-muted-foreground">
+                      {product.rating} ({product.likes} {t("milkshakes.likes")})
+                    </span>
                   </div>
                   <Button size="sm" variant="outline" onClick={() => addItem(product)}>
                     <ShoppingCart className="h-4 w-4 mr-2" />
-                    Adicionar
+                    {t("products.add")}
                   </Button>
                 </div>
               </CardContent>
@@ -87,7 +91,7 @@ export function FeaturedProducts() {
         
         <div className="text-center mt-12">
           <Button asChild variant="outline" className="rounded-full px-8">
-            <Link to="/shop">Ver mais produtos</Link>
+            <Link to="/shop">{t("products.view.more")}</Link>
           </Button>
         </div>
       </div>

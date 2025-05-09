@@ -208,7 +208,7 @@ export function HeroSection() {
                 transition={{ delay: 1 }}
               >
                 <p className="text-sm text-center font-medium">
-                  Bem-vindo ao Lisa's Café! 😺
+                  {t("hero.welcome")} 😺
                 </p>
                 <div className="absolute h-4 w-4 bg-white dark:bg-gray-700 transform rotate-45 -bottom-2 left-1/2 -translate-x-1/2"></div>
               </motion.div>
@@ -224,7 +224,7 @@ export function HeroSection() {
               >
                 <div className="flex items-center gap-2">
                   <span className="text-lg">🌟</span>
-                  <span className="text-sm font-medium">Entrega grátis</span>
+                  <span className="text-sm font-medium">{t("hero.free.delivery")}</span>
                 </div>
               </motion.div>
             )}
@@ -246,7 +246,7 @@ export function HeroSection() {
             }
           }}
         >
-          <span className="text-sm text-muted-foreground mb-2">Role para ver mais</span>
+          <span className="text-sm text-muted-foreground mb-2">{t("hero.scroll")}</span>
           <div className="w-6 h-9 rounded-full border-2 border-muted-foreground flex items-start justify-center p-1">
             <motion.div 
               className="w-1.5 h-2 bg-muted-foreground rounded-full"

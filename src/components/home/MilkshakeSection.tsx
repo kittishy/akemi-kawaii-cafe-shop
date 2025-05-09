@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { useTheme } from "@/context/ThemeContext";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,6 +10,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 export function MilkshakeSection() {
   const { addItem } = useCart();
+  const { t, language } = useTheme();
   const [loadingImages, setLoadingImages] = useState<Record<string, boolean>>({});
   
   const handleImageLoad = (productId: string) => {
@@ -22,8 +24,8 @@ export function MilkshakeSection() {
     <section className="py-16 bg-lisa-soft-gray dark:bg-gray-900">
       <div className="container">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="font-display text-3xl font-bold">Milkshakes Especiais</h2>
-          <p className="text-muted-foreground mt-2">Feitos com muito carinho e decorações fofas</p>
+          <h2 className="font-display text-3xl font-bold">{t("milkshakes.title")}</h2>
+          <p className="text-muted-foreground mt-2">{t("milkshakes.description")}</p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -43,15 +45,17 @@ export function MilkshakeSection() {
                 </div>
                 <CardContent className="p-0 space-y-3">
                   <Badge variant="outline" className="bg-accent/10 text-accent-foreground border-accent/20">
-                    {shake.likes} likes
+                    {shake.likes} {t("milkshakes.likes")}
                   </Badge>
                   <div className="flex justify-between items-start">
                     <h3 className="font-medium">{shake.title}</h3>
-                    <span className="font-bold">R$ {shake.price.toFixed(2)}</span>
+                    <span className="font-bold">
+                      {language === "pt-BR" ? "R$" : "$"} {shake.price.toFixed(2)}
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground">{shake.description}</p>
                   <Button className="w-full" onClick={() => addItem(shake)}>
-                    Comprar agora
+                    {t("milkshakes.buy")}
                   </Button>
                 </CardContent>
               </div>

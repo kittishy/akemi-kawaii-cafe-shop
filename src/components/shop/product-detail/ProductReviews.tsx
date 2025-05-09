@@ -21,7 +21,7 @@ interface ProductReviewsProps {
 }
 
 export function ProductReviews({ rating, totalReviews, reviews }: ProductReviewsProps) {
-  const { language } = useTheme();
+  const { t } = useTheme();
   
   return (
     <motion.section 
@@ -31,7 +31,7 @@ export function ProductReviews({ rating, totalReviews, reviews }: ProductReviews
       className="mb-20"
     >
       <h2 className="font-display text-3xl font-bold mb-8">
-        {language === "pt-BR" ? "Avaliações" : "Reviews"}
+        {t("product.reviews")}
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -52,7 +52,7 @@ export function ProductReviews({ rating, totalReviews, reviews }: ProductReviews
                 ))}
               </div>
               <div className="text-sm text-muted-foreground mt-1">
-                {language === "pt-BR" ? "Baseado em" : "Based on"} {totalReviews} {language === "pt-BR" ? "avaliações" : "reviews"}
+                {t("product.based.on")} {totalReviews} {t("product.ratings")}
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@ export function ProductReviews({ rating, totalReviews, reviews }: ProductReviews
           <div className="space-y-3 mt-6">
             {[5, 4, 3, 2, 1].map((ratingValue) => (
               <div key={ratingValue} className="flex items-center gap-2">
-                <span className="text-sm">{ratingValue} {language === "pt-BR" ? "estrelas" : "stars"}</span>
+                <span className="text-sm">{ratingValue} {t("product.stars")}</span>
                 <div className="flex-1 h-2 bg-muted rounded-full overflow-hidden">
                   <div
                     className="h-full bg-yellow-500"
@@ -81,7 +81,7 @@ export function ProductReviews({ rating, totalReviews, reviews }: ProductReviews
           </div>
           
           <Button className="w-full mt-8 rounded-full">
-            {language === "pt-BR" ? "Avaliar este produto" : "Rate this product"}
+            {t("product.rate")}
           </Button>
         </div>
         
