@@ -16,14 +16,14 @@ export default defineConfig(({ mode }) => ({
     componentTagger(),
     {
       name: 'handle-missing-modules',
-      resolveId(id) {
+      resolveId(id: string) {
         // Handle react-icons imports specifically
         if (id.startsWith('react-icons/')) {
           return { id: 'virtual:empty-module', external: false };
         }
         return null;
       },
-      load(id) {
+      load(id: string) {
         if (id === 'virtual:empty-module') {
           // Return an empty module that exports a component that renders nothing
           return `
