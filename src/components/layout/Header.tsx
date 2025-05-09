@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import { Button } from "@/components/ui/button";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X, Headphones } from "lucide-react";
 import { Logo } from "./header/Logo";
 import { DesktopNavigation } from "./header/DesktopNavigation";
 import { MobileMenu } from "./header/MobileMenu";
@@ -43,8 +43,8 @@ export function Header() {
 
   // Handle support button click
   const handleSupportClick = () => {
-    // Link to Lisa's Café Discord server
-    window.open("https://discord.gg/lisa-cafe-support", "_blank"); // Replace with the real Discord link.
+    // Link to AionX Discord server
+    window.open("https://discord.gg/aionx-support", "_blank"); // Discord link to be replaced with actual link
     // Vibration feedback for mobile
     if (navigator.vibrate) {
       navigator.vibrate(50);
@@ -124,22 +124,22 @@ export function Header() {
         
         {/* Actions */}
         <div className="flex items-center gap-2">
-          {/* Support Button */}
+          {/* Support Button - Ícone alterado para Headphones */}
           <Button 
             variant="ghost" 
             size="icon"
             className="relative overflow-hidden"
             onClick={handleSupportClick}
           >
-            <MessageCircle className="h-5 w-5" />
-            <span className="sr-only">Lisa's Support</span>
+            <Headphones className="h-5 w-5" />
+            <span className="sr-only">AionX Support</span>
           </Button>
           
           <HeaderActions />
         </div>
       </div>
       
-      {/* Decorative paw prints that appear when scrolled */}
+      {/* Decorative elements */}
       <AnimatePresence>
         {isScrolled && (
           <>

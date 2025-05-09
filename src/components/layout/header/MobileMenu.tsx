@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Coffee, Home, ShoppingBag, Newspaper, Phone, HeadphonesIcon } from "lucide-react";
+import { Coffee, Home, ShoppingBag, Newspaper, Phone, Headphones } from "lucide-react";
 import { useTheme } from "@/context/ThemeContext";
 import { motion } from "framer-motion";
 
@@ -78,9 +78,7 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
         <div className="absolute top-12 left-4 w-24 h-24 rounded-full bg-primary/10 blur-xl"></div>
         <div className="absolute bottom-24 right-8 w-32 h-32 rounded-full bg-accent/10 blur-xl"></div>
         
-        {/* Pegadas decorativas */}
-        <div className="absolute top-20 right-8 text-3xl opacity-10 rotate-12">🐾</div>
-        <div className="absolute bottom-40 left-12 text-2xl opacity-10 -rotate-12">🐾</div>
+        {/* Elementos decorativos (removidas as pegadas) */}
         
         <nav className="flex flex-col gap-5 p-8 h-full">
           <div className="mb-4">
@@ -95,8 +93,8 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
               }}
             >
               <img
-                src="/lovable-uploads/lisa-mascot.png"
-                alt="Lisa mascote"
+                src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png"
+                alt="AionX logo"
                 className="w-full h-full object-contain"
               />
             </motion.div>
@@ -132,7 +130,7 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
           
           <motion.div variants={itemVariants}>
             <a 
-              href="https://t.me/lisascafebot" 
+              href="https://discord.gg/aionx-support" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-3 p-4 rounded-xl font-medium text-lg bg-accent/10 hover:bg-accent/20 active:bg-accent/30 transition-all"
@@ -144,7 +142,7 @@ export function MobileMenu({ isOpen, onClose, navLinks }: MobileMenuProps) {
               }}
             >
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-accent/20 text-accent-foreground">
-                <HeadphonesIcon className="h-5 w-5" />
+                <Headphones className="h-5 w-5" />
               </span>
               <span>{t("support.telegram")}</span>
             </a>

@@ -5,7 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ThemeProvider, useTheme } from "@/context/ThemeContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { CartProvider } from "@/context/CartContext";
 import { motion } from "framer-motion";
 import Index from "./pages/Index";
@@ -32,7 +32,6 @@ const App = () => {
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
-  const { t } = useTheme();
   
   useEffect(() => {
     // Simulating app loading
@@ -54,7 +53,7 @@ function AppContent() {
           >
             <img 
               src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
-              alt="Lisa's Café Loading" 
+              alt="AionX Loading" 
               className="w-full h-full object-contain" 
             />
             <motion.div 
@@ -71,7 +70,7 @@ function AppContent() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            {t("loading")}
+            Carregando...
           </motion.p>
         </div>
       </div>
