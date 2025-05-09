@@ -87,12 +87,12 @@ const translations = {
   
   // Hero Section
   "hero.title": {
-    "pt-BR": "O melhor café de gatinho",
-    "en-US": "The Best Kitty Coffee"
+    "pt-BR": "O melhor café com gatinhos",
+    "en-US": "The Best Cat-themed Coffee"
   },
   "hero.subtitle": {
-    "pt-BR": "Prepare-se para uma experiência café com miados",
-    "en-US": "Get ready for a meowgnificent coffee experience"
+    "pt-BR": "Prepare-se para uma experiência café encantadora",
+    "en-US": "Get ready for a wonderful coffee experience"
   },
   "hero.cta": {
     "pt-BR": "Comprar agora",
@@ -100,7 +100,7 @@ const translations = {
   },
   "hero.badge": {
     "pt-BR": "✨ Café Temático de Gatinhos",
-    "en-US": "✨ Kitty Themed Café"
+    "en-US": "✨ Cat Themed Café"
   },
   "hero.about": {
     "pt-BR": "Conheça a Lisa",
@@ -155,8 +155,8 @@ const translations = {
     "en-US": "Description"
   },
   "product.description.extra": {
-    "pt-BR": "Aproveite este produto especial do Lisa's CaféShop, feito com ingredientes cuidadosamente selecionados para proporcionar uma experiência única de sabor e aroma.",
-    "en-US": "Enjoy this special product from Lisa's CaféShop, made with carefully selected ingredients to provide a unique experience of flavor and aroma."
+    "pt-BR": "Aproveite este produto especial do Lisa's Café, feito com ingredientes cuidadosamente selecionados para proporcionar uma experiência única de sabor e aroma.",
+    "en-US": "Enjoy this special product from Lisa's Café, made with carefully selected ingredients to provide a unique experience of flavor and aroma."
   },
   "product.availability": {
     "pt-BR": "Disponibilidade",

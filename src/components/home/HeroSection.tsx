@@ -109,7 +109,7 @@ export function HeroSection() {
               <Button asChild variant="outline" size="lg" className="rounded-full px-8 h-12 text-base">
                 <Link to="/about">
                   <Coffee className="h-5 w-5 mr-2" />
-                  Conheça a Lisa
+                  {t("hero.about")}
                 </Link>
               </Button>
             </motion.div>
@@ -208,7 +208,7 @@ export function HeroSection() {
                 transition={{ delay: 1 }}
               >
                 <p className="text-sm text-center font-medium">
-                  Bem-vindo ao Lisa's Cafe! 😺
+                  Bem-vindo ao Lisa's Café! 😺
                 </p>
                 <div className="absolute h-4 w-4 bg-white dark:bg-gray-700 transform rotate-45 -bottom-2 left-1/2 -translate-x-1/2"></div>
               </motion.div>

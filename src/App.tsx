@@ -54,7 +54,7 @@ function AppContent() {
           >
             <img 
               src="/lovable-uploads/7eda1067-8586-41ec-8b78-50ec5763e70a.png" 
-              alt="Lisa's CaféShop Loading" 
+              alt="Lisa's Café Loading" 
               className="w-full h-full object-contain" 
             />
             <motion.div 

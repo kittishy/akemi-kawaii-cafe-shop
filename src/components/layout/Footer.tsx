@@ -15,25 +15,25 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-2">
               <img 
                 src="/lovable-uploads/440478d4-0308-4bb0-8b3b-3f6538c16e58.png" 
-                alt="Lisa's CaféShop" 
+                alt="Lisa's Café" 
                 className="h-10 w-auto object-contain rounded-full border border-lisa-baby-blue/30" 
               />
               <span className="font-display font-bold text-lg text-primary">
-                Akemi Kawaii <span className="text-accent">Cafe</span>
+                Lisa's <span className="text-accent">Café</span>
               </span>
             </Link>
             <p className="text-sm text-muted-foreground">
-              Your kawaii refuge for specialty coffees and treats inspired by Japanese pop culture. Exclusive products with a cute and charming theme!
+              Seu refúgio para cafés especiais e guloseimas inspiradas pela cultura pop japonesa. Produtos exclusivos com um tema fofo e encantador!
             </p>
             <div className="flex gap-2 items-center">
               <a 
-                href="https://t.me/akemikawaiicafe_bot" 
+                href="https://t.me/lisascafe_bot" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent-foreground transition-colors"
               >
                 <MessageCircle className="h-4 w-4" />
-                <span>Chat with Lisa on Telegram</span>
+                <span>Converse com a Lisa no Telegram</span>
               </a>
             </div>
           </div>
@@ -120,7 +120,7 @@ export function Footer() {
         
         <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-muted-foreground">
-            &copy; {year} Lisa's CaféShop – All rights reserved.
+            &copy; {year} Lisa's Café – {t("footer.rights")}
           </p>
           
           <div className="flex gap-6">

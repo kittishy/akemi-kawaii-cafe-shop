@@ -43,8 +43,8 @@ export function Header() {
 
   // Handle support button click
   const handleSupportClick = () => {
-    // Link to Lisa's CaféShop Discord server
-    window.open("https://discord.gg/akemi-kawaii-cafe", "_blank"); // Ellen: Replace with the real Discord link.
+    // Link to Lisa's Café Discord server
+    window.open("https://discord.gg/lisa-cafe-support", "_blank"); // Replace with the real Discord link.
     // Vibration feedback for mobile
     if (navigator.vibrate) {
       navigator.vibrate(50);
@@ -132,7 +132,7 @@ export function Header() {
             onClick={handleSupportClick}
           >
             <Headphones className="h-5 w-5" />
-            <span className="sr-only">Akemi Support</span>
+            <span className="sr-only">Lisa's Support</span>
           </Button>
           
           <HeaderActions />
