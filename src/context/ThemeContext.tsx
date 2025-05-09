@@ -325,6 +325,120 @@ const translations = {
   "loading": {
     "pt-BR": "Carregando...",
     "en-US": "Loading..."
+  },
+  
+  // About Page
+  "about.title": {
+    "pt-BR": "Conheça a Lisa",
+    "en-US": "Meet Lisa"
+  },
+  "about.subtitle": {
+    "pt-BR": "A mascote mais fofa do mundo dos cafés temáticos, com personalidade única e cheio de curiosidades para compartilhar.",
+    "en-US": "The cutest mascot in the world of themed cafes, with a unique personality and full of curiosities to share."
+  },
+  "about.button.talk": {
+    "pt-BR": "Fale com a Lisa",
+    "en-US": "Talk to Lisa"
+  },
+  "about.history.title": {
+    "pt-BR": "A História da Lisa",
+    "en-US": "Lisa's Story"
+  },
+  "about.history.p1": {
+    "pt-BR": "Lisa é uma gatinha com pelagem branca e detalhes em tons pastel, que nasceu com um talento especial para os aromas e sabores de café.",
+    "en-US": "Lisa is a white-furred kitten with pastel details, born with a special talent for coffee aromas and flavors."
+  },
+  "about.history.p2": {
+    "pt-BR": "Desde pequena, Lisa sempre foi encantada com o ritual de preparo do café. Com sua curiosidade felina natural, observava atentamente os baristas trabalhando e aprendeu todos os segredos de como fazer o café perfeito.",
+    "en-US": "Since she was little, Lisa has always been enchanted with the coffee preparation ritual. With her natural feline curiosity, she carefully observed baristas working and learned all the secrets of making the perfect coffee."
+  },
+  "about.history.p3": {
+    "pt-BR": "Um dia, decidiu abrir seu próprio café temático, onde poderia compartilhar seu amor por bebidas deliciosas em um ambiente acolhedor e cheio de personalidade felina.",
+    "en-US": "One day, she decided to open her own themed café, where she could share her love for delicious drinks in a cozy environment full of feline personality."
+  },
+  "about.history.p4": {
+    "pt-BR": "Hoje, Lisa é a anfitriã oficial do Lisa's Cafe, onde recebe seus clientes com muito carinho e presenteia cada um com uma experiência sensorial única.",
+    "en-US": "Today, Lisa is the official host of Lisa's Cafe, where she welcomes her customers with great affection and gifts each one with a unique sensory experience."
+  },
+  "about.facts.title": {
+    "pt-BR": "Curiosidades",
+    "en-US": "Fun Facts"
+  },
+  "about.facts.age.title": {
+    "pt-BR": "Idade",
+    "en-US": "Age"
+  },
+  "about.facts.age.description": {
+    "pt-BR": "Lisa tem 4 anos em idade felina, o que equivale a uma jovem barista cheia de energia e criatividade.",
+    "en-US": "Lisa is 4 years old in feline age, equivalent to a young barista full of energy and creativity."
+  },
+  "about.facts.drink.title": {
+    "pt-BR": "Bebida Favorita",
+    "en-US": "Favorite Drink"
+  },
+  "about.facts.drink.description": {
+    "pt-BR": "Seu cappuccino especial com canela e arte latte em formato de patinha.",
+    "en-US": "Her special cappuccino with cinnamon and paw-shaped latte art."
+  },
+  "about.facts.music.title": {
+    "pt-BR": "Música",
+    "en-US": "Music"
+  },
+  "about.facts.music.description": {
+    "pt-BR": "Lisa adora lo-fi beats enquanto prepara o café da manhã para seus clientes.",
+    "en-US": "Lisa loves lo-fi beats while preparing breakfast for her customers."
+  },
+  "about.facts.hobby.title": {
+    "pt-BR": "Hobby",
+    "en-US": "Hobby"
+  },
+  "about.facts.hobby.description": {
+    "pt-BR": "Colecionar xícaras vintage e tirar sonecas estratégicas entre um preparo e outro.",
+    "en-US": "Collecting vintage cups and taking strategic naps between preparations."
+  },
+  "about.gallery.title": {
+    "pt-BR": "Galeria da Lisa",
+    "en-US": "Lisa's Gallery"
+  },
+  "about.gallery.image1.title": {
+    "pt-BR": "Lisa preparando café",
+    "en-US": "Lisa preparing coffee"
+  },
+  "about.gallery.image1.description": {
+    "pt-BR": "Lisa em ação no seu café favorito.",
+    "en-US": "Lisa in action at her favorite café."
+  },
+  "about.gallery.image2.title": {
+    "pt-BR": "Lisa sorridente",
+    "en-US": "Smiling Lisa"
+  },
+  "about.gallery.image2.description": {
+    "pt-BR": "Um sorriso que ilumina o dia de todos os clientes.",
+    "en-US": "A smile that brightens the day of all customers."
+  },
+  "about.gallery.image3.title": {
+    "pt-BR": "Lisa de corpo inteiro",
+    "en-US": "Full-body Lisa"
+  },
+  "about.gallery.image3.description": {
+    "pt-BR": "A mascote completa com todos os detalhes fofos.",
+    "en-US": "The complete mascot with all the cute details."
+  },
+  "about.cta.title": {
+    "pt-BR": "Venha tomar um café com a Lisa!",
+    "en-US": "Come have coffee with Lisa!"
+  },
+  "about.cta.description": {
+    "pt-BR": "Conheça nossas bebidas especiais, produtos temáticos e entre para o nosso clube de amigos da Lisa.",
+    "en-US": "Discover our special drinks, themed products, and join our Lisa's friends club."
+  },
+  "about.cta.products": {
+    "pt-BR": "Ver produtos",
+    "en-US": "View products"
+  },
+  "about.cta.fanclub": {
+    "pt-BR": "Clube de fãs",
+    "en-US": "Fan club"
   }
 };
 

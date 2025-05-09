@@ -20,7 +20,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        
+        'sans': ['Noto Sans JP', 'sans-serif'],
         'display': ['Poppins', 'sans-serif'],
       },
       colors: {
@@ -68,15 +68,13 @@ export default {
           ring: 'hsl(var(--sidebar-ring))'
         },
         // Paleta de Cores Lisa's CaféShop - Tons Pastel
-        akemi: {
-          'baby-blue': '#BAD7F2',
-          'lavender': '#E2D1F9',
-          'soft-gray': '#F0F0F0',
-          'cream': '#FFF6E9',
-          'peach': '#FFE5D9',
-          'dark-blue': '#6B9AC4',
-          'dark-lavender': '#A388B8',
-          'dark-gray': '#525252',
+        lisa: {
+          'cream': 'hsl(var(--lisa-cream))',
+          'peach': 'hsl(var(--lisa-peach))',
+          'soft-blue': 'hsl(var(--lisa-soft-blue))',
+          'soft-pink': 'hsl(var(--lisa-soft-pink))',
+          'mint': 'hsl(var(--lisa-mint))',
+          'lavender': 'hsl(var(--lisa-lavender))',
         }
       },
       borderRadius: {
@@ -119,7 +117,7 @@ export default {
         "fade-out": "fade-out 0.3s ease-out",
       },
       backgroundImage: {
-        'akemi-paw-pattern': "url('/akemi-paw-pattern.svg')", // Ellen: Renomeado para consistência com a marca.
+        'lisa-paw-pattern': "url('/lisa-paw-pattern.svg')",
       }
     },
   },
